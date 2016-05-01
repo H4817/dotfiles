@@ -1,0 +1,70 @@
+!Neon Benny
+
+URxvt*background: #151515
+URxvt*foreground: #6BC3C5
+
+URxvt*colorUL: #4E4FFF
+
+!black
+*color0:  #151515
+*color8:  #777070
+!red
+*color1:               #7221FB
+*color9:               #923EFF
+
+!green
+*color2:               #34D4CC
+*color10:              #12B2B8
+
+!yellow
+*color3:               #54E72D
+*color11:              #6BBF59
+
+!blue 
+*color4:               #3472D9
+*color12:              #3875A2
+
+!magenta
+*color5:               #774AD8
+*color13:              #49386E
+
+!cyan
+*color6:               #0EA5C8
+*color14:              #058FAF
+
+!white
+*color7:  #6BC3C5
+*color15: #A0A0A0
+
+!URxvt.font:xft:Sauce Code Powerline:pixelsize=22 
+
+!URxvt.font:xft:Anonymice Powerline:bold:pixelsize=22 
+
+!!!URxvt.font:xft:Cousine for Powerline:bold:pixelsize=22 
+
+!!!URxvt.font:xft:Roboto Mono for Powerline:bold:pixelsize=22 
+
+!!!URxvt.font:xft:Meslo LG M DZ for Powerline:bold:pixelsize=22 
+
+!!!URxvt.font:xft:Meslo LG S DZ for Powerline:bold:pixelsize=22 
+
+URxvt.font:xft:Cousine for Powerline:pixelsize=21:antialias=true:hinting=true
+URxvt.boldFont:xft:Cousine for Powerline:bold:pixelsize=21:antialias=true:hinting=true
+URxvt.italicFont:xft:Roboto Mono for Powerline:italic:pixelsize=21:antialias=true:hinting=true
+ 
+
+!URxvt.font:xft:Ubuntu Mono derivative Powerline:pixelsize=22:antialias=true:hinting=true
+!URxvt.boldFont:xft:Ubuntu Mono derivative Powerline:bold:pixelsize=22:antialias=true:hinting=true
+!URxvt.italicFont:xft:DejaVu Sans Mono for Powerline:italic:pixelsize=22:antialias=true:hinting=true
+ 
+ 
+URxvt.scrollBar: false
+ 
+urxvt*transparent: true
+urxvt*shading: 15
+
+
+URxvt.perl-ext: default,url-select
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true

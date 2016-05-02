@@ -1,23 +1,23 @@
-# path to your oh-my-zsh installation.
-  export zsh=$home/.oh-my-zsh
+# Path to your oh-my-zsh installation.
+  export ZSH=$HOME/.oh-my-zsh
 
-zsh_theme="agnoster"
+ZSH_THEME="agnoster"
 
-enable_correction="true"
+ENABLE_CORRECTION="true"
 
 plugins=(git)
 
-# user configuration
+# User configuration
 
-  export path="/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
-# export manpath="/usr/local/man:$manpath"
+  export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+# export MANPATH="/usr/local/man:$MANPATH"
 alias s='sudo pacman -s'
 
-alias s='sudo pacman -syu'
+alias S='sudo pacman -Syu'
 
 alias y='yaourt'
 
-alias y='yaourt -syua --noconfirm'
+alias Y='yaourt -Syua --noconfirm'
 
 alias h='history'
 
@@ -25,21 +25,21 @@ alias grep='egrep'
 
 alias df='df -m'
 
-source $zsh/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 
 
-# you may need to manually set your language environment
-# export lang=en_us.utf-8
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 
-# preferred editor for local and remote sessions
-# if [[ -n $ssh_connection ]]; then
-#   export editor='vim'
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
 # else
-#   export editor='mvim'
+#   export EDITOR='mvim'
 # fi
 
-# compilation flags
-# export archflags="-arch x86_64"
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export ssh_key_path="~/.ssh/dsa_id"
+# export SSH_KEY_PATH="~/.ssh/dsa_id"

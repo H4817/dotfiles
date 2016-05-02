@@ -1,6 +1,10 @@
 # Path to your oh-my-zsh installation.
   export ZSH=$HOME/.oh-my-zsh
 
+  LC_CTYPE="ru_RU.UTF-8"
+  export LANG="ru_RU.UTF-8"
+  LC_ALL=ru_RU.UTF-8
+
 ZSH_THEME="agnoster"
 
 ENABLE_CORRECTION="true"
@@ -24,6 +28,12 @@ alias h='history'
 alias grep='egrep'
 
 alias df='df -m'
+
+alias disk='sudo fdisk -l'
+
+alias tree='find . -type d | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"'
+
+alias remove='yaourt -Rs'
 
 source $ZSH/oh-my-zsh.sh
 

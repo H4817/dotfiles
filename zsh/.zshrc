@@ -19,6 +19,8 @@ alias s='sudo pacman -s'
 
 alias S='sudo pacman -Syu'
 
+alias su='sudo pm-suspend'
+
 alias y='yaourt'
 
 alias Y='yaourt -Syua --noconfirm'

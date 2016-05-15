@@ -19,7 +19,7 @@ new_window pixel 0
 new_float pixel 2
 #new_window normal 0
 #new_float normal 0
-
+bindsym $mod+Shift+Cyrillic_i exec ./clion-1.2.4/bin/clion.sh
 
 # hide_edge_borders both
 
@@ -46,11 +46,16 @@ bindsym $mod+Cyrillic_te exec i3-sensible-terminal
 bindsym $mod+Cyrillic_pe kill
 
 # start dmenu (a program launcher)
-bindsym $mod+Cyrillic_ka exec rofi -show drun -modi drun -lines 3 -eh 2 -width 100 -padding 456 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18" 
+#bindsym $mod+cyrillic_ka exec rofi -show drun -modi drun -lines 3 -eh 2 -width 100 -padding 456 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "system san francisco display 18" 
+#bindsym $mod+cyrillic_ka exec rofi -show drun -modi drun -lines 3 -eh 2 -width 100 -padding 456 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "system san francisco display 18" 
+
+bindsym $mod+Cyrillic_ka exec --no-startup-id dmenu_run -fn 'xft:snap 11px' -nb '#111111' -nf '#555555' -sb '#111111' -sf '#9E5CCA'
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
 
 # change focus
 bindsym $mod+Cyrillic_er focus left
@@ -222,7 +227,9 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-exec_always feh --bg-scale /home/nikolaj/Downloads/Images/Обои/sci4_fi_twilight-1600x900.png
+#exec_always feh --bg-scale /home/nikolaj/Downloads/Images/Обои/sci4_fi_twilight-1600x900.png
+#exec_always feh --bg-scale /home/nikolaj/Downloads/Images/minimalistic-text-simplistic-1680x1050-8438.jpg
+exec_always feh --bg-scale /home/nikolaj/Downloads/Images/minimalistic-text-simplistic-1920x1080-8438.jpg
 exec_always compton -f
 
 assign [class="Pidgin"] $workspace1

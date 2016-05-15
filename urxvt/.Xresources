@@ -40,7 +40,7 @@ URxvt*colorUL: #4E4FFF
 
 !URxvt.font:xft:Anonymice Powerline:bold:pixelsize=22 
 
-!!!URxvt.font:xft:Cousine for Powerline:bold:pixelsize=22 
+!URxvt.font:xft:Cousine for Powerline:bold:pixelsize=22 
 
 !!!URxvt.font:xft:Roboto Mono for Powerline:bold:pixelsize=22 
 
@@ -62,7 +62,10 @@ URxvt.scrollBar: false
  
 urxvt*transparent: true
 urxvt*shading: 15
+!urxvt*shading: 0
 
+Xft*antialias:          true
+Xft*hinting:            full
 
 URxvt.perl-ext: default,url-select
 URxvt.keysym.M-u: perl:url-select:select_next

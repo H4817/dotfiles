@@ -15,11 +15,11 @@ plugins=(git)
 
   export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
-alias s='sudo pacman -s'
+alias s='sudo pacman -S'
+
+alias sus='sudo pm-suspend'
 
 alias S='sudo pacman -Syu'
-
-alias su='sudo pm-suspend'
 
 alias y='yaourt'
 

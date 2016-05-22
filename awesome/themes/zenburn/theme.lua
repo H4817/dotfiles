@@ -78,8 +78,8 @@ theme.pcmanfm_icon = "/usr/share/icons/AwOken/clear/128x128/places/desktop.png"
 theme.clion_icon = "/opt/clion/bin/clion.svg"
 theme.intellijIdea_icon = "/usr/share/intellijidea-ce/bin/idea.png"
 theme.spyder_icon = "/usr/share/icons/hicolor/scalable/apps/spyder.svg"
-theme.widget_mem  = "/home/nikolaj/Downloads/images/mem.png"
-theme.widget_cpu  = "/home/nikolaj/Downloads/images/cpu.png"
+theme.widget_mem  = "~/Downloads/images/mem.png"
+theme.widget_cpu  = "~/Downloads/images/cpu.png"
 
 
 

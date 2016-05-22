@@ -8,7 +8,7 @@
 
 -- {{{ Main
 theme = {}
-theme.wallpaper = "/home/nikolaj/Downloads/images/wallpaper.jpg"
+theme.wallpaper = "~/Downloads/images/wallpaper.jpg"
 -- }}}
 
 -- {{{ Styles

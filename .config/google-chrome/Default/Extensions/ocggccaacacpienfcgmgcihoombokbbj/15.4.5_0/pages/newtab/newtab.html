@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+
+        <link rel="icon" href="../../img/icon/icon16.png">
+        
+        <link rel="stylesheet" href="../../vendor/jGrowl/jquery.jgrowl.min.css">
+        <link rel="stylesheet" href="../../vendor/jquery-ui/css/jquery-ui.css"/>
+        <link rel="stylesheet" href="../../vendor/bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../../vendor/clock/css/counteverest.css"/>
+        <link rel="stylesheet" href="../../vendor/contextmenu/css/contextmenu.css"/>
+
+        <link rel="stylesheet" href="css/css.css"/>
+        <!--<link rel="stylesheet" href="css/firefox.css"/>-->
+        <link rel="stylesheet" href="css/sidebar.css"/>
+        <link rel="stylesheet" href="css/popup.css"/>
+        <link rel="stylesheet" href="css/weather.css"/>
+        
+        <script src="../../vendor/head.min.js"></script>
+        <script src="./js/scripts/newtab.js"></script>
+        
+        <!--
+        <script src="../../vendor/jquery-2.1.3.min.js"></script>
+        <script src="../../vendor/jquery-ui/js/jquery-ui.js"></script>
+        <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../../vendor/parallax.min.js"></script>
+        <script src="../../vendor/clock/js/vendor/jquery.counteverest.js"></script>
+        <script src="../../vendor/jquery.pulse.min.js"></script>
+        <script src="../../vendor/contextmenu/jquery.contextmenu.js"></script>
+        <script src="../../vendor/jGrowl/jquery.jgrowl.min.js"></script>
+         
+        <script src="../common.js"></script>
+        
+        <script src="../../vendor/q.js"></script>
+        <script src="../../vendor/dexie.js"></script>
+        <script src="../../vendor/LargeLocalStorage.min.js"></script>
+
+        <script src="../analitics.js"></script>
+        <script src="../../browsers/browser-firefox.js"></script>
+        <script src="../../browsers/datebase-firefox.js"></script>
+        <script src="../backend/theme.js"></script>
+        <script src="../backend/groups.js"></script>
+        <script src="../backend/dials.js"></script>
+        <script src="../backend/backend.js"></script>
+        <script src="../backend/install.js"></script>
+
+        <script src="../../browsers/page-firefox.js"></script>
+        
+        <script src="js/search.js"></script>
+        <script src="js/theme.js"></script>
+        <script src="js/page.js"></script>
+
+        <script src="js/tiles.js"></script>
+        
+        <script src="js/popup.js"></script>
+        
+        <script src="js/todo.js"></script>
+        <script src="js/clock.js"></script>
+        <script src="js/speech.js"></script>
+        <script src="js/weather.js"></script>
+        <script src="js/rate.js"></script>
+        <script src="js/bookmarks.js"></script>
+        <script src="js/relax.js"></script>
+        <script src="js/sidebar.js"></script>
+        <script src="js/new_dial.js"></script>
+        <script src="js/tile_context_menu.js"></script>
+        <script src="js/group_context_menu.js"></script>
+        -->
+        
+    </head>
+    <body>
+       <div id="background-borders"></div>
+        <div id="background-image-container"></div>
+        <div id="background-container"></div>
+
+        <div id="popupDownloadVideoThemeOverlay" class="popupDownloadVideoThemeOverlay">
+            <div id="offerAdjustBgToTheme" class="popupDownloadVideoTheme">
+                <div class="content">
+                    <div class="title"><span id="popup-live-bg-title"></span></div>
+                    <div id="themeBackgroundAdjustPreviewContainer">
+                        <div class="loading">
+                            <div class="squaresLoading"></div>
+                            <span id="popup-live-bg-text"></span>
+                            <div class="squaresLoadingProgress">
+                                <span id="squaresLoadingProgress">0</span>
+                                <span>%</span>
+                            </div>
+                            <div class="squaresLoadingError">
+                                <span id="squaresLoadingError"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="center control-buttons">
+                        <button id="applyThemeBg" class="fvdButton green"><span></span></button>
+                        <button id="cancelThemeBg" class="fvdButton"><span></span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popupDownloadImageTheme" id="popupDownloadImageTheme">
+            <div class="loading">
+                <span id="popup-static-bg-updating"></span>
+                <div class="circleLoadingProgress">
+                    <div class="circleLoading"></div>
+                    <span id="circleLoadingProgress">0</span>
+                    <span>%</span>
+                </div>
+                <div class="circleLoadingError">
+                    <span id="circleLoadingError">Error</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="rate-us-modal-content" class="modal fade rate-us-modal-content" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="modal-body-container">
+                            <div class="options-application-rating-popup-data">
+                                <div id="options-application-rating-popup-title-mark" class="options-application-rating-popup-title-like"></div>
+                                <a data-rating="2" id="options-application-rating-popup-item-bad" class="options-application-rating-item"></a>
+                                <a data-rating="3" id="options-application-rating-popup-item-better" class="options-application-rating-item"></a>
+                                <a data-rating="4" id="options-application-rating-popup-item-awesome" class="options-application-rating-item"></a>
+                                <a data-rating="1" id="options-application-rating-popup-item-already" class="options-application-rating-item"></a>
+                            </div>
+                            <div class="options-application-rating-popup-stars">
+                                <div id="options-application-rating-popup-title-thanks" class="options-application-rating-popup-title-thanks"></div>
+                                <div>
+                                    <img src="css/img/buttons/rate/like.png" alt="like" class="options-application-rating-popup-img-like">
+                                    <img src="css/img/buttons/rate/like.png" alt="like" class="options-application-rating-popup-img-like">
+                                    <img src="css/img/buttons/rate/like.png" alt="like" class="options-application-rating-popup-img-like">
+                                    <img src="css/img/buttons/rate/like.png" alt="like" class="options-application-rating-popup-img-like">
+                                    <img src="css/img/buttons/rate/like.png" alt="like" class="options-application-rating-popup-img-like">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="bookmarks-modal-content" class="modal fade bookmarks-modal-content" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 id="options-bookmarks-popup-title" class="modal-title"></h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-body-container">
+                                <div id="options-bookmarks-popup-body" class="options-bookmarks-popup-body">
+                                    <div id="options-bookmarks-popup-body-load" class="options-bookmarks-popup-body-load">
+                                        <img id="options-bookmarks-popup-body-load-img" src="css/img/buttons/bookmarks/loading-bookamarks.gif">
+                                    </div>
+                                    <div id="options-bookmarks-popup-body-img" class="options-bookmarks-popup-body-img"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="options-bookmarks-popup-close" type="button" class="btn btn-warning options-bookmarks-popup-btn options-bookmarks-popup-close"></button>
+                            <button id="options-bookmarks-popup-hide" type="button" class="btn btn-primary options-bookmarks-popup-btn options-bookmarks-popup-hide" data-dismiss="modal"></button>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="relax-modal-content" class="modal fade relax-modal-content" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 id="options-relax-popup-title" class="modal-title"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-body-container">
+                            <div id="options-relax-popup-body" class="options-relax-popup-body">
+                                <div id="options-relax-popup-body-top-text" class="options-relax-popup-body-top-text"></div>
+                                <div id="options-relax-popup-body-img" class="options-relax-popup-body-img">
+                                    <img src="css/img/relax/relax-big.png" class="options-relax-popup-body-img-big">
+                                </div>
+                                <div id="options-relax-popup-body-bottom-text" class="options-relax-popup-body-bottom-text">
+                                    <div id="options-relax-popup-body-bottom-text-1" class="options-relax-popup-body-bottom-text-item"></div>
+                                    <div id="options-relax-popup-body-bottom-text-2" class="options-relax-popup-body-bottom-text-item"></div>
+                                    <div id="options-relax-popup-body-bottom-text-3" class="options-relax-popup-body-bottom-text-item"></div>
+                                </div>
+                                <div id="options-relax-popup-body-bottom-tip" class="options-relax-popup-body-bottom-tip"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="options-relax-popup-close" type="button" class="btn btn-warning options-relax-popup-btn options-relax-popup-close"></button>
+                        <button id="options-relax-popup-hide" type="button" class="btn btn-primary options-relax-popup-btn options-relax-popup-hide" data-dismiss="modal"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="header" class="header"></div>
+
+        <div id="header-weather" class="header-weather">
+            <div class="weather">
+                <div id="weather-intro" class="weather-intro">
+                    <span class="icon intro-icon" data-icon="H"></span>
+                    <span id="weather-intro-text" class="weather-intro-text"></span>
+                </div>
+                <div id="weather-error" class="weather-error">
+                    <span class="icon error-icon" data-icon="("></span>
+                    <span class="weather-error-text">
+                        <span id="weather-error-text-location"></span>
+                        <form id="weather-input-city-form">
+                            <input type="text" id="weather-input-city-field" tabindex="-1" autocomplete="off">
+                        </form>
+                    </span>
+                </div>
+                <div id="weather-active" class="weather-active">
+                    <div class="weather-data noselect">
+                        <span id="weather-icon" class="weather-icon"></span>
+                        <span id="weather-temperature" class="weather-temperature"></span>
+                        <span id="weather-units" class="weather-units"></span>
+                    </div>
+                    <div class="weather-location">
+                        <img src="css/img/buttons/weather/location.png" alt="Location" id="weather-location-current" class="weather-location-current">
+                        <span id="weather-city" class="weather-city"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="mv-container" class="mv-container">
+            <div id="search-container" class="search-container">
+                <div id="search-input-box" class="search-input-box">
+                    <form action="https://google.com/search" id="search-form" class="search-form" method="get">
+                        <img src="img/icon.png" class="application-logo">
+                        <div id="search-input-field" class="search-input-field">
+                            <div id="search-placeholder" class="search-placeholder"></div>
+                            <label for="search-input"></label>
+                            <input id="search-input" class="search-input" autocomplete="off" name="q" tabindex="1">
+                            <div id="search-speed-container" class="search-speed-container">
+                                <a id="search-form-speech" class="search-form-speech" tabindex="-1">
+                                    <img id="search-form-speech-img" src="css/img/buttons/search/mic.png" alt="Voice Search">
+                                </a>
+                            </div>
+                            <div id="search-suggestion" class="search-suggestion"></div>
+                        </div>
+                        <div class="search-button">
+                            <button id="search-button-item" class="search-button-item" type="submit" tabindex="-1"><span class="search-button-item-icon"><span id="search-button-item-text" class="search-button-item-text"></span></span></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="dials-notifications" class="dials-notifications">
+                <div id="dials-notification" class="dials-notification">
+                    <div id="dials-notification-message" class="message">
+                        <img src="css/img/buttons/popup/close-icon.png" alt="Close" title="" id="dials-notification-message-close" class="dials-notification-message-close">
+                        <span id="dials-notification-message-text" class="dials-notification-message-text"></span>
+                    </div>
+                </div>
+            </div>
+            <div id="mv-tiles" class="mv-tiles"></div>
+            <div id="mv-clock" class="mv-clock">
+                <div id="clock-container" class="clock-container"></div>
+            </div>
+        </div>
+
+        <div id="footer-description" class="footer-description">
+            <div class="footer-description-content">
+                <img src="css/img/buttons/popup/close-icon.png" alt="Close" title="" id="footer-description-close" class="footer-description-close"><div class="footer-description-text"><img src="css/img/buttons/popup/info-icon.png" alt="Info message" class="footer-description-image"><span id="page-bottom-notice-settings"></span></div>
+            </div>
+        </div>
+        <div id="todo-container" class="todo-container">
+            <div class="todo-container-content">
+                <div id="todo-header" class="todo-header">
+                    <div class="todo-header-container">
+                        <div id="todo-header-left" class="todo-header-left">
+                            <div id="todo-header-counter" class="todo-header-counter">
+                                <span id="todo-header-done" class="todo-header-done"></span>
+                                <span class="todo-header-delimiter">/</span>
+                                <span id="todo-header-total" class="todo-header-total"></span>
+                                <span id="todo-header-counter-text" class="todo-header-counter-text"></span>
+                            </div>
+                        </div>
+                        <div id="todo-header-right" class="todo-header-right">
+                            <span id="todo-header-toggle" class="todo-header-toggle"></span>
+                            <span id="todo-popup-hide" class="todo-popup-hide"><img src="css/img/buttons/todo/minimize_window.png" alt="" class="todo-popup-hide-img"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="todo-main-content">
+                    <div class="todo-body">
+                        <div id="work-todo-list" class="work-todo-list"><ul></ul></div>
+                        <div id="empty-todo-list" class="empty-todo-list">
+                            <div class="show-todo-list-center">
+                                <div class="empty-todo-list-img">?</div>
+                                <div id="empty-todo-list-title" class="empty-todo-list-title"></div>
+                                <div id="empty-todo-list-description" class="empty-todo-list-description"></div>
+                            </div>
+                        </div>
+                        <div id="done-todo-list" class="done-todo-list">
+                            <div class="show-todo-list-center">
+                                <div class="done-todo-list-img">&#9733;</div>
+                                <div id="done-todo-list-title" class="done-todo-list-title"></div>
+                                <div id="done-todo-list-description" class="done-todo-list-description"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="todo-footer">
+                        <div id="todo-footer-input-container" class="todo-footer-input-container">
+                            <form action="#" id="todo-footer-input-form" class="todo-footer-input-form">
+                                <div class="todo-footer-input-form-left">
+                                    <input type="text" autocomplete="off" id="todo-footer-input" class="todo-footer-input">
+                                </div>
+                                <div class="todo-footer-input-form-right">
+                                    <button type="submit" id="todo-footer-input-submit" class="btn btn-primary todo-footer-input-submit"></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="footer">
+            <span id="footer-links-display-block" class="footer-links-display-block">
+                <img src="css/img/buttons/bottom/settings.png" id="footer-toggle-display-links" class="footer-toggle-display-links" tabindex="-1">
+            </span>
+            <span id="footer-links-list-block" class="footer-links-list-block">
+                <a id="footer-themes-link" class="footer-themes-link" tabindex="-1"></a>
+                <a id="footer-settings-link" class="footer-settings-link" tabindex="-1"></a>
+                <a id="todo-link" class="todo-link" tabindex="-1"><span id="todo-link-text" class="todo-link-text"></span><span id="todo-link-done-counter" class="todo-link-done-counter"></span></a>
+            </span>
+        </div>
+        <div id="relax" class="relax">
+            <button id="relax-start-btn" class="btn btn-success relax-start-btn"><img src="css/img/relax/icon.png" class="relax-start-btn-img"><span id="relax-start-btn-text" class="relax-start-btn-text"></span></button>
+            <button id="relax-done-btn" class="btn btn-success relax-done-btn"><span id="relax-done-btn-text"></span></button>
+        </div>
+        <div id="tou" class="tou">
+            <a href="#" target="_blank" id="created-link" class="created-link" tabindex="-1"></a>
+            <a href="http://flixel.com" target="_blank" id="powered-link" class="powered-link" tabindex="-1">Flixel</a>
+            <a href="http://parallaxsearch.com/terms-and-conditions.html" target="_blank" id="terms-link" class="tou-link" tabindex="-1"></a>
+            <a href="http://parallaxsearch.com/privacy-policy.html" target="_blank" id="privacy-link" class="tou-link privacy-link" tabindex="-1"></a>
+        </div>
+
+        <div id="sidebar-wrap" class="sidebar-wrap">
+            <div id="sidebar-container" class="sidebar-container">
+                <div id="sidebar-toggle-panel" class="sidebar-toggle-panel">
+                    <button id="sidebar-toggle-button" class="sidebar-toggle-button" tabindex="-1"></button>
+                </div>
+                <div class="sidebar-content">
+                    <div class="sidebar-content-header">
+                        <div class="title-container">
+                            <span id="sidebar-title" class="sidebar-title"></span>
+                            <img src="css/img/buttons/bottom/settings.png" id="sidebar-settings-button" class="sidebar-settings-button">
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="sidebar-content-scroll">
+                        <div>
+                            <ul id="sidebar-groups" class="sidebar-groups"></ul>
+                            <div id="sidebar-add-group-container" class="sidebar-add-group-container">
+                                <button id="sidebar-add-group" class="sidebar-add-group" tabindex="-1"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="add-new-dial-dialog" class="modal fade add-new-dial-dialog" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form id="add-new-dial-form" action="#" method="get">
+                        <div class="modal-header">
+                            <h4 id="add-new-dial-dialog-title" class="modal-title"></h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-body-container">
+                                <div class="form-group has-feedback">
+                                    <div class="input-group">
+                                        <span id="add-new-dial-field-url" class="input-group-addon"></span>
+                                        <input type="text" class="form-control" id="newDialUrl" aria-describedby="inputNewDialUrl" autocomplete="off">
+                                    </div>
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <span id="inputNewDialUrl" class="sr-only"></span>
+                                    <span class="form-control-error"></span>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <div class="input-group">
+                                        <span id="add-new-dial-field-name" class="input-group-addon"></span>
+                                        <input type="text" class="form-control" id="newDialTitle" aria-describedby="inputNewDialTitle" autocomplete="off">
+                                    </div>
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <span id="inputNewDialTitle" class="sr-only"></span>
+                                    <span class="form-control-error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span id="add-new-dial-field-group" class="input-group-addon"></span>
+                                        <select id="newDialGroup" class="form-control"></select>
+                                    </div>
+                                    <span class="form-control-error"></span>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <div id="add-new-dial-new-group-block" class="add-new-dial-new-group-block">
+                                        <span id="add-new-dial-text-groupName" class="input-group-addon-label"></span>
+                                        <div class="input-group">
+                                            <span id="add-new-dial-field-groupName" class="input-group-addon"></span>
+                                            <input type="text" class="form-control" id="newDialGroupName" aria-describedby="inputNewDialGroupTitle" autocomplete="off">
+                                        </div>
+                                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                        <span id="inputNewDialGroupTitle" class="sr-only"></span>
+                                        <span class="form-control-error"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="add-new-dial-dialog-close" type="button" class="btn btn-primary" data-dismiss="modal"></button>
+                            <button id="add-new-dial-dialog-apply" type="submit" class="btn btn-primary"></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="add-new-group-dialog" class="modal fade add-new-group-dialog" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form id="add-new-group-form" action="#" method="get">
+                        <div class="modal-header">
+                            <h4 id="add-new-group-dialog-title" class="modal-title"></h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-body-container">
+                                <div class="form-group has-feedback">
+                                    <div class="input-group">
+                                        <span id="add-new-group-field-name" class="input-group-addon">Title</span>
+                                        <input type="text" class="form-control" id="newGroupTitle"
+                                               aria-describedby="inputNewGroupTitle" autocomplete="off">
+                                    </div>
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <span id="inputNewGroupTitle" class="sr-only"></span>
+                                    <span class="form-control-error"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="add-new-group-dialog-close" type="button" class="btn btn-primary" data-dismiss="modal"></button>
+                            <button id="add-new-group-dialog-apply" type="submit" class="btn btn-primary"></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="delete-group-dialog" class="modal fade delete-group-dialog" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form id="delete-group-form" action="#" method="get">
+                        <div class="modal-header">
+                            <h4 id="delete-group-dialog-title" class="modal-title"></h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-body-container">
+                                <p id="delete-group-dialog-body-1" class="delete-group-dialog-body-text"></p>
+                                <p id="delete-group-dialog-body-2" class="delete-group-dialog-body-text"></p>
+                                <input type="hidden" id="deleteGroupId" contenteditable="false">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="delete-group-dialog-close" type="button" class="btn btn-primary" data-dismiss="modal"></button>
+                            <button id="delete-group-dialog-apply" type="submit" class="btn btn-danger"></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade" id="tileSearchModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-search">
+                <div class="modal-content modal-search">
+                <img id="tileSearchImg" src="" />
+                
+                <form id="tile-search-form" class="form-inline" action="" method="get">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="tileSearchText" placeholder="Search" list="tileSearchList" name="q" autocomplete="off">
+                            <ul id="tileSearchList" class='datalist'></ul>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="buttonSubmit">
+                        <span class="glyphicon glyphicon-search"></span><span id="search-button-item-text" class="search-button-item-text"></span>
+                    </button>
+                </form>
+
+
+                    
+                    
+                </div>
+            </div>
+        </div>
+        
+
+        <script src="../analitics.js"></script>
+        <script src="js/pageview.js"></script>
+    </body>
+</html>

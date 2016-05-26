@@ -1,0 +1,24 @@
+2016/05/24-21:06:36.992 466 Reusing MANIFEST /home/nikolaj/.config/google-chrome/Default/Extension State/MANIFEST-000001
+2016/05/24-21:06:36.992 466 Recovering log #141
+2016/05/24-21:06:37.182 466 Reusing old log /home/nikolaj/.config/google-chrome/Default/Extension State/000141.log 
+2016/05/24-21:21:56.127 910 Level-0 table #145: started
+2016/05/24-21:21:56.296 910 Level-0 table #145: 4034448 bytes OK
+2016/05/24-21:21:56.353 910 Delete type=0 #141
+2016/05/24-22:45:18.503 910 Level-0 table #147: started
+2016/05/24-22:45:18.721 910 Level-0 table #147: 4186353 bytes OK
+2016/05/24-22:45:18.749 910 Delete type=0 #144
+2016/05/24-22:45:18.750 910 Compacting 4@0 + 1@1 files
+2016/05/24-22:45:18.968 910 Generated table #148: 4 keys, 8868 bytes
+2016/05/24-22:45:18.968 910 Compacted 4@0 + 1@1 files => 8868 bytes
+2016/05/24-22:45:18.996 910 compacted to: files[ 0 1 1 0 0 0 0 ]
+2016/05/24-22:45:18.996 910 Delete type=2 #145
+2016/05/24-22:45:18.997 910 Delete type=2 #140
+2016/05/24-22:45:18.997 910 Delete type=2 #142
+2016/05/24-22:45:19.024 910 Delete type=2 #147
+2016/05/24-22:45:19.025 910 Delete type=2 #138
+2016/05/24-23:56:59.035 910 Level-0 table #150: started
+2016/05/24-23:56:59.246 910 Level-0 table #150: 3856913 bytes OK
+2016/05/24-23:56:59.275 910 Delete type=0 #146
+2016/05/25-01:02:59.487 910 Level-0 table #152: started
+2016/05/25-01:02:59.664 910 Level-0 table #152: 3746415 bytes OK
+2016/05/25-01:02:59.746 910 Delete type=0 #149

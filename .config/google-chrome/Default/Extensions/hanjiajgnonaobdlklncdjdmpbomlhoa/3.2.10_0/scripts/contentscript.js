@@ -1,0 +1,1 @@
+"use strict";var exports={};browsers.define("contentscript",["bootstrap"],function(a){var b={init:function(){a.init()}};return b}),browsers.require(["contentscript"],function(a){a.init()},exports);

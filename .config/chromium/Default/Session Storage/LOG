@@ -1,0 +1,21 @@
+2016/05/26-12:28:11.797 5425 Reusing MANIFEST /home/nikolaj/.config/chromium/Default/Session Storage/MANIFEST-000001
+2016/05/26-12:28:11.798 5425 Recovering log #37
+2016/05/26-12:28:11.798 5425 Reusing old log /home/nikolaj/.config/chromium/Default/Session Storage/000037.log 
+2016/05/26-12:28:45.795 5594 Level-0 table #41: started
+2016/05/26-12:28:45.881 5594 Level-0 table #41: 38996 bytes OK
+2016/05/26-12:28:45.919 5594 Delete type=0 #37
+2016/05/26-12:29:46.241 5594 Level-0 table #43: started
+2016/05/26-12:29:46.438 5594 Level-0 table #43: 122203 bytes OK
+2016/05/26-12:29:46.524 5594 Delete type=0 #40
+2016/05/26-12:36:46.319 5594 Level-0 table #45: started
+2016/05/26-12:36:46.362 5594 Level-0 table #45: 41681 bytes OK
+2016/05/26-12:36:46.391 5594 Delete type=0 #42
+2016/05/26-12:36:46.391 5594 Compacting 4@0 + 1@1 files
+2016/05/26-12:36:46.540 5594 Generated table #46: 799 keys, 395950 bytes
+2016/05/26-12:36:46.540 5594 Compacted 4@0 + 1@1 files => 395950 bytes
+2016/05/26-12:36:46.568 5594 compacted to: files[ 0 1 1 0 0 0 0 ]
+2016/05/26-12:36:46.568 5594 Delete type=2 #41
+2016/05/26-12:36:46.595 5594 Delete type=2 #36
+2016/05/26-12:36:46.595 5594 Delete type=2 #45
+2016/05/26-12:36:46.596 5594 Delete type=2 #38
+2016/05/26-12:36:46.596 5594 Delete type=2 #43

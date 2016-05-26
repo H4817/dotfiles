@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Settings</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="../../img/icon/icon16.png">
+
+    <link href="../../vendor/jquery-ui/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../../vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../vendor/jGrowl/jquery.jgrowl.min.css">
+    <link rel="stylesheet" href="../../vendor/colorpick/css/colpick.css">
+    <link rel="stylesheet" href="css/options.css" />
+    <!--<link rel="stylesheet" href="css/firefox.css"/>-->
+
+    <script src="../../vendor/head.min.js"></script>
+    <script src="./js/scripts/options.js"></script>
+</head>
+
+<body>
+    <div class="page-title">
+        <img src="../../img/icon/icon256.png" class="options-page-icon">
+        <p id="options-page-title" class="options-page-title"></p>
+        <span class="settings-tab-buttons">
+                <a id="settings-content-tab-button" href="options.html" data-settings-tabid="0" class="btn btn-success settings-tab-button settings-content-tab-button"></a>
+                <a id="settings-favorite-tab-button" href="favorite.html" data-settings-tabid="2" class="btn btn-warning settings-tab-button settings-favorite-tab-button"></a>
+            </span>
+        <div class="options-header-right-block">
+            <span id="share42init-top" class="share42init-top"></span>
+            <a target="_blank" id="vk-group-link" class="btn btn-primary" href="https://vk.com/livestartpage"></a>
+            <a id="settings-control-tab-button" href="settings.html" data-settings-tabid="1" class="btn btn-info settings-control-tab-button"></a>
+            <a target="_blank" id="feedback-link" class="btn btn-warning feedback-link"></a>
+            <a target="_blank" id="help-link" class="btn btn-info help-link"></a>
+            <a id="back-to-newtab-link" class="btn btn-danger back-to-newtab-link"></a>
+        </div>
+    </div>
+
+    <div class="options-header-center-block">
+        <div id="options-application-rating-popup" class="options-application-rating-popup">
+            <div class="options-application-rating-popup-data">
+                <div id="options-application-rating-popup-title-mark" class="options-application-rating-popup-title"></div>
+                <a data-rating="2" id="options-application-rating-popup-item-bad" class="options-application-rating-item"></a>
+                <a data-rating="3" id="options-application-rating-popup-item-better" class="options-application-rating-item"></a>
+                <a data-rating="4" id="options-application-rating-popup-item-awesome" class="options-application-rating-item"></a>
+                <a data-rating="1" id="options-application-rating-popup-item-already" class="options-application-rating-item"></a>
+            </div>
+            <div class="options-application-rating-popup-stars">
+                <div id="options-application-rating-popup-title-thanks" class="options-application-rating-popup-title"></div>
+                <img src="css/img/buttons/rating-star.png" alt="star" class="options-application-rating-popup-star-item">
+                <img src="css/img/buttons/rating-star.png" alt="star" class="options-application-rating-popup-star-item">
+                <img src="css/img/buttons/rating-star.png" alt="star" class="options-application-rating-popup-star-item">
+                <img src="css/img/buttons/rating-star.png" alt="star" class="options-application-rating-popup-star-item">
+                <img src="css/img/buttons/rating-star.png" alt="star" class="options-application-rating-popup-star-item">
+            </div>
+        </div>
+    </div>
+
+    <div class="settings-tabs-content">
+        <div id="settings-content-tab-0" data-settings-content-tabid="0" class="settings-tabs">
+            <div id="available-themes" class="available-themes">
+                <div class="available-themes-container">
+                    <ul class="nav nav-pills nav-justified text-center">
+                        <li>
+                            <a href="#available-flixel-themes-container" id="available-flixel-themes-button" data-settings-tabid="0" data-toggle="tab" class="settings-background-tab-button">
+                                <span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#available-video-themes-container" id="available-video-themes-button" data-settings-tabid="1" data-toggle="tab" class="settings-background-tab-button">
+                                <span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#available-image-themes-container" id="available-image-themes-button" data-settings-tabid="2" data-toggle="tab" class="settings-background-tab-button">
+                                <span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#available-live-themes-container" id="available-live-themes-button" data-settings-tabid="3" data-toggle="tab" class="settings-background-tab-button">
+                                <span></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div id="tab-content-loader" class="tab-content-loader">
+                        <div class="tab-content-loader-container text-center">
+                            <img src="css/img/tab/loading.gif" class="tab-content-loader-img">
+                            <div id="tab-content-loading-text"></div>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div id="available-flixel-themes-container" class="tab-pane fade in">
+                            <div id="current-powered-video-note" class="current-powered-video-note">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="random-themes-container">
+                                                <div class="random-themes-container-wrap-flixel">
+                                                    <span class="options-settings-random-themes-enable-notice"></span>
+                                                    <br/>
+
+                                                    <label id="random-themes-display-downloaded-label-flixel" for="random-themes-display-downloaded-flixel-tab" class="random-themes-display-label random-themes-display-label-downloaded">
+                                                        <input type="checkbox" name="random-themes-display-downloaded" id="random-themes-display-downloaded-flixel-tab" class="random-themes-display">
+                                                        <span class="options-settings-random-themes-enable-downloaded"></span>
+                                                    </label>
+
+                                                    <label id="random-themes-display-favorites-label-flixel" for="random-themes-display-favorites-flixel-tab" class="random-themes-display-label random-themes-display-label-favorites">
+                                                        <input type="checkbox" name="random-themes-display-favorites" id="random-themes-display-favorites-flixel-tab" class="random-themes-display">
+                                                        <span class="options-settings-random-themes-enable-favorites"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            <div class="options-settings-themes-sort-type">
+                                                <div class="btn-group" data-toggle="buttons">
+                                                    <label class="btn btn-primary options-settings-themes-sort-item" data-sort="2">
+                                                        <input type="radio" name="options" id="themes-sort-2" autocomplete="off"> <span id="options-settings-themes-sort-featured"></span>
+                                                    </label>
+
+                                                    <label class="btn btn-primary options-settings-themes-sort-item" data-sort="0">
+                                                        <input type="radio" name="options" id="themes-sort-0" autocomplete="off"> <span id="options-settings-themes-sort-new"></span>
+                                                    </label>
+
+                                                    <label class="btn btn-primary options-settings-themes-sort-item" data-sort="1">
+                                                        <input type="radio" name="options" id="themes-sort-1" autocomplete="off"> <span id="options-settings-themes-sort-popular"></span>
+                                                    </label>
+                                                    
+                                                    <label class="btn btn-primary options-settings-themes-sort-item" data-sort="4">
+                                                        <input type="radio" name="options" id="themes-sort-4" autocomplete="off"> <span id="options-settings-themes-sort-search"></span>
+                                                    </label>
+
+                                                    <label class="btn btn-primary options-settings-themes-sort-item" data-sort="3">
+                                                        <input type="radio" name="options" id="themes-sort-3" autocomplete="off"> <span id="options-settings-themes-sort-downloaded"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a id="add-user-flixel-btn" class="add-user-flixel-btn" data-toggle="modal" data-target="#add-user-flixel-dialog"></a>
+                                            <a href="https://flixel.com/" target="_blank"><span id="current-powered-video-text"></span><img src="css/img/flixel/logo.png" alt="flixel logo"/>Flixel</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="themes-search-form-wrap">
+                                <form id="themes-search-form" class="form-inline" action="" method="get">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="themes-search-text" placeholder="" list="themesSearchList" name="q" autocomplete="off">
+                                            <ul id="themesSearchList" class='datalist'></ul>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-primary" id="themes-search-submit">
+                                        <span class="glyphicon glyphicon-search"></span><span id="themes-search-button-text" class="themes-search-button-text"></span>
+                                    </button>
+                                </form>
+                            </div>
+                            
+                            
+                            <div id="available-flixel-backgrounds" class="available-themes-block"></div>
+                            <div id="load-more-content-container" class="text-center load-more-content-container">
+                                <button id="load-more-flixel-content" class="btn btn-success load-more-flixel-content"></button>
+                            </div>
+                        </div>
+                        <div id="available-video-themes-container" class="tab-pane fade in">
+                            <p   id="video-themes-coming-soon-note"></p>
+                            <div id="video-themes-coming-soon-block">
+                                <div class="random-themes-container">
+                                    <div class="random-themes-container-wrap-livebg">
+                                        <span class="options-settings-random-themes-enable-notice"></span>
+
+                                        <label id="random-themes-display-label-livebg-downloaded" for="random-themes-display-label-livebg-downloaded" class="random-themes-display-label random-themes-display-label-downloaded">
+                                            <input type="checkbox" name="random-themes-display-downloaded" id="random-themes-display-label-livebg-downloaded" class="random-themes-display">
+                                            <span class="options-settings-random-themes-enable-downloaded"></span>
+                                        </label>
+
+                                        <label id="random-themes-display-label-livebg-favorites" for="random-themes-display-label-livebg-favorites" class="random-themes-display-label random-themes-display-label-favorites">
+                                            <input type="checkbox" name="random-themes-display-favorites" id="random-themes-display-label-livebg-favorites" class="random-themes-display">
+                                            <span class="options-settings-random-themes-enable-favorites"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <p id="current-theme-video-note" class="current-theme-video-note current-theme-video-note-livebg"></p>
+                                <div id="available-video-themes" class="available-themes-block"></div>
+                            </div>
+                        </div>
+                        <div id="available-image-themes-container" class="tab-pane fade in">
+                            <br>
+                            <div class="row">
+                                
+                                
+                                <div class="col-md-4">
+                                    <div class="random-themes-container">
+                                        <div class="random-themes-container-wrap-imagebg">
+                                            <span class="options-settings-random-themes-enable-notice"></span>
+                                            <br/>
+
+                                            <label id="random-themes-display-label-imagebg-downloaded" for="random-themes-display-imagebg-tab-downloaded" class="random-themes-display-label random-themes-display-label-downloaded">
+                                                <input type="checkbox" name="random-themes-display-imagebg-tab-downloaded" id="random-themes-display-imagebg-tab-downloaded" class="random-themes-display">
+                                                <span class="options-settings-random-themes-enable-downloaded"></span>
+                                            </label>
+
+                                            <label id="random-themes-display-label-imagebg-favorites" for="random-themes-display-imagebg-tab-favorites" class="random-themes-display-label random-themes-display-label-favorites">
+                                                <input type="checkbox" name="random-themes-display-imagebg-tab-favorites" id="random-themes-display-imagebg-tab-favorites" class="random-themes-display">
+                                                <span class="options-settings-random-themes-enable-favorites"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-md-offset-0 col-md-4 text-center">
+                                    <div class="buttons-wrap">
+                                        <div class="options-settings-images-sort-type">
+                                            <div class="btn-group" data-toggle="buttons">
+                                                <label class="btn btn-primary options-settings-images-sort-item" data-sort="0">
+                                                    <input type="radio" name="options" id="themes-sort-0" autocomplete="off"> <span id="options-settings-images-sort-gallery"></span>
+                                                </label>
+
+                                                <label class="btn btn-primary options-settings-images-sort-item" data-sort="1">
+                                                    <input type="radio" name="options" id="themes-sort-1" autocomplete="off"> <span id="options-settings-images-sort-your"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <button id="options-settings-images-upload" class="btn btn-warning"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><span id="options-settings-images-add"></span></button>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-offset-0 col-md-4 text-right">
+                                    
+                                </div>
+
+
+                            </div>
+
+                            <div id="available-image-themes" class="available-themes-block"></div>
+                        </div>
+                        <div id="available-live-themes-container" class="tab-pane fade in">
+                            <div id="available-live-themes" class="available-themes-block"></div>
+                            <p id="current-theme-live-note" class="current-theme-live-note"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="feedback-dialog" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 id="popup-feedback-dialog-title" class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <form id="feedback-form" class="feedback-form">
+                            <div class="form-group">
+                                <label id="popup-feedback-dialog-label-email" for="exampleInputEmail"></label><span class="feedback-form-field-required form-field-required-text"></span>
+                                <input type="email" class="form-control" id="exampleInputEmail" maxlength="255">
+                                <div class="form-error-text"></div>
+                            </div>
+                            <div class="form-group">
+                                <label id="popup-feedback-dialog-label-subject" for="exampleInputSubject"></label><span class="feedback-form-field-required form-field-required-text"></span>
+                                <input type="text" class="form-control" id="exampleInputSubject" maxlength="255">
+                                <div class="form-error-text"></div>
+                            </div>
+                            <div class="form-group">
+                                <label id="popup-feedback-dialog-label-description" for="exampleTextArea"></label>
+                                <textarea class="form-control exampleTextArea" id="exampleTextArea" maxlength="10000"></textarea>
+                                <div class="form-error-text"></div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-success" id="feedBackConfirm"></button>
+                            </div>
+                        </form>
+                        <div id="feedback-success" class="feedback-success">
+                            <p id="popup-feedback-dialog-success-text" class="text-center"></p>
+                            <div class="text-center feedback-success-glyphicon">
+                                <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                            </div>
+                            <div class="text-center">
+                                <button id="feedback-close-btn" class="btn btn-primary"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="share-app-dialog" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center popup-share-top-block popup-share-text-block">
+                        <span id="popup-share-app-dialog-text-1" class="popup-share-app-dialog-text popup-share-app-dialog-text-1"></span>
+                        <span id="popup-share-app-dialog-text-2" class="popup-share-app-dialog-text popup-share-app-dialog-text-2"></span>
+                        <span id="popup-share-app-dialog-text-3" class="popup-share-app-dialog-text popup-share-app-dialog-text-3"></span>
+                        <span id="popup-share-app-dialog-text-4" class="popup-share-app-dialog-text popup-share-app-dialog-text-4 text-right"></span>
+                    </div>
+                    <div class="text-center popup-share-middle-block">
+                        <span id="popup-share-app-dialog-title" class="popup-share-app-dialog-title modal-title"></span>
+                    </div>
+                    <div class="share42init"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="add-user-flixel-dialog" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-title popup-add-user-flixel-title"><span id="popup-add-user-flixel-title"></span></div>
+                    <div class="popup-add-user-flixel-body">
+                        <p id="popup-add-user-flixel-body-text" class="popup-add-user-flixel-body-text"></p>
+                    </div>
+                    <div class="popup-add-user-flixel-body-links-container">
+                        <div id="popup-add-user-flixel-body-links-text" class="popup-add-user-flixel-body-links-text"></div>
+                        <div class="popup-add-user-flixel-body-links">
+                            <p>
+                                <a id="popup-add-user-flixel-body-link-how-create" href="http://blog.flixel.com/cinemagraphs-for-marketers" target="_blank"></a>
+                            </p>
+                            <p>
+                                <a id="popup-add-user-flixel-body-link-how-create-fb" href="http://blog.flixel.com/new-facebook-profile-videos" target="_blank"></a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-center popup-add-user-flixel-body-code-container">
+                        <p class="popup-add-user-flixel-body-code">
+                            <a href="https://flixel.com" target="_blank"><img src="css/img/flixel/logo.png" alt="flixel logo"></a>
+                            <span id="popup-add-user-flixel-body-code"></span>
+                        </p>
+                    </div>
+                    <div class="text-center popup-add-user-flixel-body-footer">
+                        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                            <div class="btn-group" role="group">
+                                <a target="_blank" id="popup-add-user-flixel-link-iphone" class="btn popup-add-user-flixel-link-iphone" href="https://flixel.com/products/ios/cinemagraph-pro/?coupon=LiveStart"></a>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <a target="_blank" id="popup-add-user-flixel-link-mac" class="btn popup-add-user-flixel-link-mac" href="https://flixel.com/products/mac/cinemagraph-pro/?coupon=LiveStart"></a>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <a target="_blank" id="popup-add-user-flixel-link-cloud" class="btn popup-add-user-flixel-link-cloud" href="https://flixel.com/products/flixel-cloud/?coupon=LiveStart"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="restore-default-theme-dialog" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 id="popup-restore-default-theme-title" class="modal-title"></h4>
+                </div>
+                <div class="modal-body popup-restore-default-theme-body">
+                    <p class="text-center"><span id="popup-restore-default-theme-open-settings"></span>
+                        <button id="open-chrome-settings-url" class="btn-link">chrome://settings/</button>
+                        <br><span id="popup-restore-default-theme-open-settings-text2"></span></p>
+                    <div id="options-restore-theme-popup-body-load" class="options-restore-theme-popup-body-load">
+                        <img id="options-restore-theme-popup-body-load-img" src="css/img/buttons/popup/loading-restore-theme.gif">
+                    </div>
+                    <div id="restore-default-theme-dialog-body" class="restore-default-theme-dialog-body"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="welcome-options-dialog" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 id="popup-welcome-options-title" class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <p id="popup-welcome-options-body-text1" class="text-center welcome-settings-body"></p>
+                    <p id="popup-welcome-options-body-text2" class="text-center welcome-options-feedback"></p>
+                    <p class="text-center welcome-options-close">
+                        <button class="btn btn-primary welcome-options-close-button" id="welcome-options-close"></button>
+                        <br>
+                        <label for="welcome-options-not-show" class="welcome-options-not-show-label">
+                            <input type="checkbox" id="welcome-options-not-show"><span id="popup-welcome-options-not-show"></span></label>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade delete-from-favorite-dialog" id="delete-from-favorite-dialog" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <p id="delete-from-favorite-dialog-text" class="delete-from-favorite-dialog-text"></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="delete-from-favorite-dialog-close" type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                    <button id="delete-from-favorite-dialog-confirm" type="button" class="btn btn-primary">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade delete-theme-dialog" id="delete-theme-dialog" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <p id="delete-theme-dialog-text" class="delete-theme-dialog-text"></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="delete-theme-dialog-close" type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                    <button id="delete-theme-dialog-confirm" type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade queue-over-dialog" id="queue-over-dialog" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <p id="queue-over-dialog-text" class="queue-over-dialog-text"></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="queue-over-dialog-ok" type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="upload-image-dialog" class="modal fade upload-image-dialog" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="upload-image-form" action="#" method="get">
+                    <div class="modal-header">
+                        <h4 id="upload-image-dialog-title" class="modal-title"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-body-container">
+                            <div class="form-group has-feedback">
+                                <div class="input-group">
+                                    <span id="upload-image-name" class="input-group-addon"></span>
+                                    <input type="text" class="form-control" id="newImageTitle" aria-describedby="uploadImageName" autocomplete="off" touched="no" >
+                                </div>
+                                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                <span id="uploadImageName" class="sr-only"></span>
+                                <span class="form-control-error"></span>
+                            </div>
+
+                            <div class="form-inline row">
+                                <div class="col-md-4">
+                                    <a href="#" type="file" class='btn btn-success width-100 btn-relative'>
+                                        <span id="upload-image-dialog-choise"></span>
+                                        <input type="file" id="upload-image-file" accept="image/jpeg,image/jpg,image/png,image/gif" />
+                                    </a>
+                                </div>
+
+                                <div id="upload-image-dialog-or" class="col-md-1 line-30"></div>
+
+                                <div class="form-group has-feedback col-md-7">
+                                    <div class="input-group width-100">
+                                        <span id="upload-image-url" class="input-group-addon"></span>
+                                        <input type="text" class="form-control" id="newImageUrl" aria-describedby="uploadImageUrl" autocomplete="off" placeholder="http://example.com/image.jpeg">
+                                    </div>
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <span id="uploadImageUrl" class="sr-only"></span>
+                                    <span class="form-control-error"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <span id="upload-image-dialog-error-title" class="upload-image-dialog-error"></span>
+                        <span id="upload-image-dialog-error-file"  class="upload-image-dialog-error"></span>
+                        <span id="upload-image-dialog-error-url"  class="upload-image-dialog-error"></span>
+                        <div id="upload-image-dialog-progress" class="progress">
+                            <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                <span class="upload-image-progress-text">Loading...</span>
+                            </div>
+                        </div>
+                        <button id="upload-image-dialog-close" type="button" class="btn btn-primary" data-dismiss="modal"></button>
+                        <button id="upload-image-dialog-apply" type="submit" class="btn btn-danger"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="video-popover-block" class="video-popover-block">
+        <div id="video-popover" class="popover video-popover" role="tooltip">
+            <div class="arrow"></div>
+            <h3 class="popover-title text-center"></h3>
+            <div class="popover-content"></div>
+        </div>
+    </div>
+    
+    <div class="selectedTxt">(Selected)</div>
+
+    <script src="../analitics.js"></script>
+</body>
+
+</html>

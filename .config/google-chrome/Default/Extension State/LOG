@@ -1,0 +1,66 @@
+2016/05/25-13:58:46.496 470 Reusing MANIFEST /home/nikolaj/.config/google-chrome/Default/Extension State/MANIFEST-000001
+2016/05/25-13:58:46.496 470 Recovering log #151
+2016/05/25-13:58:47.125 470 Reusing old log /home/nikolaj/.config/google-chrome/Default/Extension State/000151.log 
+2016/05/25-14:01:17.602 853 Level-0 table #155: started
+2016/05/25-14:01:17.787 853 Level-0 table #155: 3742282 bytes OK
+2016/05/25-14:01:17.856 853 Delete type=0 #151
+2016/05/25-22:42:43.731 853 Level-0 table #157: started
+2016/05/25-22:42:43.940 853 Level-0 table #157: 3965122 bytes OK
+2016/05/25-22:42:43.979 853 Delete type=0 #154
+2016/05/25-22:42:43.980 853 Compacting 4@0 + 1@1 files
+2016/05/25-22:42:44.228 853 Generated table #158: 4 keys, 8868 bytes
+2016/05/25-22:42:44.228 853 Compacted 4@0 + 1@1 files => 8868 bytes
+2016/05/25-22:42:44.265 853 compacted to: files[ 0 1 1 0 0 0 0 ]
+2016/05/25-22:42:44.266 853 Delete type=2 #150
+2016/05/25-22:42:44.266 853 Delete type=2 #157
+2016/05/25-22:42:44.267 853 Delete type=2 #148
+2016/05/25-22:42:44.267 853 Delete type=2 #152
+2016/05/25-22:42:44.268 853 Delete type=2 #155
+2016/05/25-23:53:24.231 853 Level-0 table #160: started
+2016/05/25-23:53:24.393 853 Level-0 table #160: 3870630 bytes OK
+2016/05/25-23:53:24.433 853 Delete type=0 #156
+2016/05/26-12:48:32.119 853 Level-0 table #162: started
+2016/05/26-12:48:32.260 853 Level-0 table #162: 4043335 bytes OK
+2016/05/26-12:48:32.299 853 Delete type=0 #159
+2016/05/26-14:11:09.121 853 Level-0 table #164: started
+2016/05/26-14:11:09.327 853 Level-0 table #164: 4159037 bytes OK
+2016/05/26-14:11:09.536 853 Delete type=0 #161
+2016/05/26-15:19:13.198 853 Level-0 table #166: started
+2016/05/26-15:19:13.350 853 Level-0 table #166: 3690293 bytes OK
+2016/05/26-15:19:13.428 853 Delete type=0 #163
+2016/05/26-15:19:13.429 853 Compacting 4@0 + 1@1 files
+2016/05/26-15:19:13.748 853 Generated table #167: 4 keys, 8868 bytes
+2016/05/26-15:19:13.748 853 Compacted 4@0 + 1@1 files => 8868 bytes
+2016/05/26-15:19:13.776 853 compacted to: files[ 0 1 1 0 0 0 0 ]
+2016/05/26-15:19:13.776 853 Delete type=2 #164
+2016/05/26-15:19:13.819 853 Delete type=2 #162
+2016/05/26-15:19:13.834 853 Delete type=2 #158
+2016/05/26-15:19:13.834 853 Delete type=2 #166
+2016/05/26-15:19:13.835 853 Delete type=2 #160
+2016/05/26-16:28:36.640 853 Level-0 table #169: started
+2016/05/26-16:28:36.824 853 Level-0 table #169: 3688519 bytes OK
+2016/05/26-16:28:36.923 853 Delete type=0 #165
+2016/05/26-17:50:09.524 853 Level-0 table #171: started
+2016/05/26-17:50:09.702 853 Level-0 table #171: 4124666 bytes OK
+2016/05/26-17:50:09.740 853 Delete type=0 #168
+2016/05/26-19:12:30.150 853 Level-0 table #173: started
+2016/05/26-19:12:30.356 853 Level-0 table #173: 4143993 bytes OK
+2016/05/26-19:12:30.395 853 Delete type=0 #170
+2016/05/26-20:14:10.722 853 Level-0 table #175: started
+2016/05/26-20:14:10.913 853 Level-0 table #175: 3715003 bytes OK
+2016/05/26-20:14:10.952 853 Delete type=0 #172
+2016/05/26-20:14:10.953 853 Compacting 4@0 + 1@1 files
+2016/05/26-20:14:11.071 853 Generated table #176: 4 keys, 8868 bytes
+2016/05/26-20:14:11.071 853 Compacted 4@0 + 1@1 files => 8868 bytes
+2016/05/26-20:14:11.108 853 compacted to: files[ 0 1 1 0 0 0 0 ]
+2016/05/26-20:14:11.109 853 Delete type=2 #169
+2016/05/26-20:14:11.110 853 Delete type=2 #171
+2016/05/26-20:14:11.110 853 Delete type=2 #175
+2016/05/26-20:14:11.111 853 Delete type=2 #167
+2016/05/26-20:14:11.111 853 Delete type=2 #173
+2016/05/26-21:37:31.579 853 Level-0 table #178: started
+2016/05/26-21:37:31.784 853 Level-0 table #178: 4185875 bytes OK
+2016/05/26-21:37:31.822 853 Delete type=0 #174
+2016/05/26-22:56:22.530 853 Level-0 table #180: started
+2016/05/26-22:56:22.697 853 Level-0 table #180: 4021912 bytes OK
+2016/05/26-22:56:22.736 853 Delete type=0 #177

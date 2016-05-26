@@ -1,0 +1,54 @@
+.ce-countdown--theme-7 {
+    background: none;
+    padding: 80px 10px;
+    line-height: 0.98em;
+}
+
+.ce-countdown--theme-7.clock-font-bold {
+    font-weight: 800;
+    line-height: 0.94em;
+    font-size: 98px;
+}
+
+.ce-countdown--theme-7.clock-font-bold .clock-format-label {
+    font-weight: 800;
+    position: relative;
+    top: 6px;
+}
+
+.ce-countdown--theme-7.clock-format-label-padding {
+    padding: 80px 50px 80px 20px;
+}
+
+.ce-countdown--theme-7 .clock-format-label {
+    font-size: 0.7em;
+    padding-left: 15px;
+    display: inline-block;
+}
+
+.ce-digits-container {
+    overflow-y: hidden;
+}
+
+@media (max-width: 900px) {
+    .ce-countdown--theme-7,
+    .ce-countdown--theme-7.clock-font-bold {
+        font-size: 65px;
+        max-width: 680px;
+    }
+}
+
+@media (max-width: 700px) {
+    .ce-countdown--theme-7,
+    .ce-countdown--theme-7.clock-font-bold {
+        font-size: 65px;
+        max-width: 550px;
+    }
+}
+
+@media (max-width: 600px) {
+    .ce-countdown--theme-7,
+    .ce-countdown--theme-7.clock-font-bold {
+        font-size: 3em;
+    }
+}

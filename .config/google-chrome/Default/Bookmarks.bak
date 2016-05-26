@@ -1,0 +1,66 @@
+{
+   "checksum": "ebaa42a1489a38220efdc4105b66877c",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13107871488862510",
+            "id": "6",
+            "name": "twitch",
+            "type": "url",
+            "url": "https://www.twitch.tv/directory/game/Hearthstone%3A%20Heroes%20of%20Warcraft"
+         }, {
+            "date_added": "13107871502925114",
+            "id": "7",
+            "name": "Новости",
+            "type": "url",
+            "url": "https://vk.com/feed"
+         }, {
+            "date_added": "13107871546414573",
+            "id": "8",
+            "name": "github",
+            "type": "url",
+            "url": "https://github.com/JakimychevNikolaj"
+         }, {
+            "date_added": "13107875048448316",
+            "id": "11",
+            "name": "YouTube",
+            "type": "url",
+            "url": "https://www.youtube.com/"
+         }, {
+            "date_added": "13107905582651845",
+            "id": "14",
+            "name": "JoyReactor",
+            "type": "url",
+            "url": "http://joyreactor.cc/"
+         }, {
+            "date_added": "13108074596193727",
+            "id": "17",
+            "name": "Односвязный линейный список",
+            "type": "url",
+            "url": "http://prog-cpp.ru/data-ols/"
+         } ],
+         "date_added": "13107871390442295",
+         "date_modified": "13108074596193727",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13107871390442301",
+         "date_modified": "0",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13107871390442302",
+         "date_modified": "0",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

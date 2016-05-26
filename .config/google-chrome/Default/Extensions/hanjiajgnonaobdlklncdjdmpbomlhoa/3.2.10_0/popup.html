@@ -1,0 +1,73 @@
+<!doctype html>
+<html class="">
+    <head>
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" href="styles/popup.css">
+    </head>
+    <body class="">
+        <div id="main">
+            <div id="warn">Your browser version does not support getBackgroundPage method, this page cannot be displayed without it. Try update your browser.</div>
+            <div >
+                <ol class="nav"></ol>
+                <!--<div class="divs">&#9660;</div>-->
+                <ol class="nav nah"></ol>
+                <div class="nav nah"></div>
+            </div>
+        </div>
+        <div id="invitation"><img class="close_button" src="https://vk.com/images/hide_left_2x.gif"/><a href="https://vk.com/musicsigvk" target="musicsig">Вступить в группу официальную MusicSig!</a></div>
+        <div id="download_queue">
+            <h2>Очередь скачивания</h2>
+            <span class="toggle_options_link show">Настроить скачивание</span>
+            <span class="toggle_options_link hide">Скрыть настройки</span>
+            <div class="clear"></div>
+            <div class="options">
+                <div class="field_interval">
+                    <label>Интервал скачивания (сек.):</label>
+                    <input type="number" min="5" value="5"/>
+                </div>
+                <div class="field_reload_mode">
+                    <label>При перезагрузке:</label>
+                    <select>
+                        <option value="flush">Очищать очередь</option>
+                        <option value="restore">Восстанавить очередь</option>
+                        <option value="continue">Продолжить загрузку</option>
+                    </select>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="link start" title="Возобновить загрузку"></button>
+                <button class="link stop" title="Приостановить загрузку"></button>
+                <button class="link clear" title="Очистить очередь"></button>
+            </div>
+            <div class="box_total">
+                <span class="label">Всего в очереди:</span><span class="items">0</span> <span class="size"></span>
+            </div>
+            <div class="clear"></div>
+            <div class="queue_list">
+                <div class="empty_message">Очередь скачивания пуста</div>
+                <div class="queue_item template">
+                    <div class="song">
+                        <div class="artist"></div>
+                        <div class="dash"> - </div>
+                        <div class="title"></div>
+                    </div>
+                    <div class="info">
+                        <div class="filename"></div>
+                        <div class="bitrate"></div>
+                        <div class="size"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- nobuild:js scripts/popup.vendor.js -->
+        <!-- nobower:js -->
+        <script src="lib/jquery/dist/jquery.js"></script>
+        <script src="lib/requirejs/require.js"></script>
+        <!-- noendbower -->
+        <!-- noendbuild -->
+
+        <script src="scripts/popup.js"></script>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+2016/05/24-21:06:42.045 555 Reusing MANIFEST /home/nikolaj/.config/google-chrome/Default/Session Storage/MANIFEST-000001
+2016/05/24-21:06:42.045 555 Recovering log #384
+2016/05/24-21:06:42.071 555 Reusing old log /home/nikolaj/.config/google-chrome/Default/Session Storage/000384.log 
+2016/05/24-22:59:55.351 910 Level-0 table #389: started
+2016/05/24-22:59:55.385 910 Level-0 table #389: 25022 bytes OK
+2016/05/24-22:59:55.444 910 Delete type=0 #384
+2016/05/24-23:00:28.700 910 Level-0 table #391: started
+2016/05/24-23:00:28.778 910 Level-0 table #391: 31701 bytes OK
+2016/05/24-23:00:28.885 910 Delete type=0 #388
+2016/05/25-00:01:56.044 910 Level-0 table #393: started
+2016/05/25-00:01:56.081 910 Level-0 table #393: 28820 bytes OK
+2016/05/25-00:01:56.110 910 Delete type=0 #390
+2016/05/25-00:39:34.012 910 Level-0 table #395: started
+2016/05/25-00:39:34.055 910 Level-0 table #395: 33896 bytes OK
+2016/05/25-00:39:34.084 910 Delete type=0 #392
+2016/05/25-00:39:34.084 910 Compacting 4@0 + 1@1 files
+2016/05/25-00:39:34.222 910 Generated table #396: 5504 keys, 182011 bytes
+2016/05/25-00:39:34.222 910 Compacted 4@0 + 1@1 files => 182011 bytes
+2016/05/25-00:39:34.292 910 compacted to: files[ 0 1 1 0 0 0 0 ]
+2016/05/25-00:39:34.292 910 Delete type=2 #393
+2016/05/25-00:39:34.292 910 Delete type=2 #389
+2016/05/25-00:39:34.292 910 Delete type=2 #395
+2016/05/25-00:39:34.292 910 Delete type=2 #386
+2016/05/25-00:39:34.292 910 Delete type=2 #391
+2016/05/25-01:26:03.723 910 Level-0 table #398: started
+2016/05/25-01:26:03.764 910 Level-0 table #398: 38297 bytes OK
+2016/05/25-01:26:03.792 910 Delete type=0 #394
+2016/05/25-01:27:11.705 910 Level-0 table #400: started
+2016/05/25-01:27:11.737 910 Level-0 table #400: 31619 bytes OK
+2016/05/25-01:27:11.793 910 Delete type=0 #397
+2016/05/25-01:27:59.049 910 Level-0 table #402: started
+2016/05/25-01:27:59.079 910 Level-0 table #402: 34328 bytes OK
+2016/05/25-01:27:59.109 910 Delete type=0 #399
+2016/05/25-01:31:21.514 910 Level-0 table #404: started
+2016/05/25-01:31:21.560 910 Level-0 table #404: 31053 bytes OK
+2016/05/25-01:31:21.588 910 Delete type=0 #401
+2016/05/25-01:31:21.589 910 Compacting 4@0 + 1@1 files
+2016/05/25-01:31:21.678 910 Generated table #405: 5724 keys, 285756 bytes
+2016/05/25-01:31:21.678 910 Compacted 4@0 + 1@1 files => 285756 bytes
+2016/05/25-01:31:21.707 910 compacted to: files[ 0 1 1 0 0 0 0 ]
+2016/05/25-01:31:21.707 910 Delete type=2 #400
+2016/05/25-01:31:21.707 910 Delete type=2 #402
+2016/05/25-01:31:21.707 910 Delete type=2 #404
+2016/05/25-01:31:21.707 910 Delete type=2 #396
+2016/05/25-01:31:21.707 910 Delete type=2 #398
+2016/05/25-01:52:26.214 910 Level-0 table #407: started
+2016/05/25-01:52:26.258 910 Level-0 table #407: 31884 bytes OK
+2016/05/25-01:52:26.313 910 Delete type=0 #403
+2016/05/25-02:02:45.406 910 Compacting 1@0 + 1@1 files
+2016/05/25-02:02:45.513 910 Generated table #408: 5779 keys, 303561 bytes
+2016/05/25-02:02:45.513 910 Compacted 1@0 + 1@1 files => 303561 bytes
+2016/05/25-02:02:45.597 910 compacted to: files[ 0 1 1 0 0 0 0 ]
+2016/05/25-02:02:45.598 910 Delete type=2 #405
+2016/05/25-02:02:45.598 910 Delete type=2 #407

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Settings</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+
+        <link rel="icon" href="../../img/icon/icon16.png">
+        
+        <link href="../../vendor/jquery-ui/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="../../vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../vendor/jGrowl/jquery.jgrowl.min.css">
+        <link rel="stylesheet" href="../../vendor/colorpick/css/colpick.css">
+        <link rel="stylesheet" href="css/options.css"/>
+        <!--<link rel="stylesheet" href="css/firefox.css"/>-->
+
+        <script src="../../vendor/head.min.js"></script>
+        <script src="./js/scripts/favorie.js"></script>
+    </head>
+    <body>
+        <div class="page-title">
+            <img src="../../img/icon/icon256.png" class="options-page-icon">
+            <p id="options-page-title" class="options-page-title"></p>
+            <span class="settings-tab-buttons">
+                <a id="settings-content-tab-button" href="options.html" data-settings-tabid="0" class="btn btn-info settings-tab-button settings-content-tab-button"></a>
+                <a id="settings-favorite-tab-button" href="favorite.html" data-settings-tabid="2" class="btn btn-success settings-tab-button settings-favorite-tab-button"></a>
+            </span>
+            <div class="options-header-right-block">
+                <span id="share42init-top" class="share42init-top"></span>
+                <a target="_blank" id="vk-group-link" class="btn btn-primary" href="https://vk.com/livestartpage"></a>
+                <a id="settings-control-tab-button" href="settings.html" data-settings-tabid="1" class="btn btn-info settings-control-tab-button"></a>
+                <a target="_blank" id="feedback-link" class="btn btn-warning feedback-link"></a>
+                <a target="_blank" id="help-link" class="btn btn-info help-link"></a>
+                <a id="back-to-newtab-link" class="btn btn-danger back-to-newtab-link"></a>
+            </div>
+        </div>
+
+        <div class="options-header-center-block">
+            <div id="options-application-rating-popup" class="options-application-rating-popup">
+                <div class="options-application-rating-popup-data">
+                    <div id="options-application-rating-popup-title-mark" class="options-application-rating-popup-title"></div>
+                    <a data-rating="2" id="options-application-rating-popup-item-bad" class="options-application-rating-item"></a>
+                    <a data-rating="3" id="options-application-rating-popup-item-better" class="options-application-rating-item"></a>
+                    <a data-rating="4" id="options-application-rating-popup-item-awesome" class="options-application-rating-item"></a>
+                    <a data-rating="1" id="options-application-rating-popup-item-already" class="options-application-rating-item"></a>
+                </div>
+                <div class="options-application-rating-popup-stars">
+                    <div id="options-application-rating-popup-title-thanks" class="options-application-rating-popup-title"></div>
+                    <img src="css/img/buttons/rating-star.png" alt="star" class="options-application-rating-popup-star-item">
+                    <img src="css/img/buttons/rating-star.png" alt="star" class="options-application-rating-popup-star-item">
+                    <img src="css/img/buttons/rating-star.png" alt="star" class="options-application-rating-popup-star-item">
+                    <img src="css/img/buttons/rating-star.png" alt="star" class="options-application-rating-popup-star-item">
+                    <img src="css/img/buttons/rating-star.png" alt="star" class="options-application-rating-popup-star-item">
+                </div>
+            </div>
+        </div>
+
+        <div class="settings-tabs-content">
+            <div id="settings-content-tab-2" data-settings-content-tabid="2" class="settings-tabs">
+                <div id="not-available-themes-container" class="not-available-themes-container" style="display: none;">
+                    <p class="not-available-themes-container-text"><img src="css/img/buttons/favorite_active.png" class="not-available-themes-container-img"><span id="not-available-themes-container-text"></span></p>
+                </div>
+                <div id="available-themes" class="available-themes available-themes-favorite">
+                    
+                    <div id="random-themes-container" class="random-themes-container" style="display: none;">
+                        <div class="random-themes-container-wrap">
+                            <span id="options-settings-random-themes-enable-notice" class="options-settings-random-themes-enable-notice"></span>
+
+                            <label id="random-themes-display-downloaded" for="random-themes-display-label-downloaded" class="random-themes-display-label random-themes-display-label-downloaded">
+                                <input type="checkbox" name="random-themes-display-downloaded" id="random-themes-display-downloaded" class="random-themes-display">
+                                <span class="options-settings-random-themes-enable-downloaded"></span>
+                            </label>
+
+                            <label id="random-themes-display-downloaded-favorites" for="random-themes-display-label-favorites" class="random-themes-display-label random-themes-display-label-favorites">
+                                <input type="checkbox" name="random-themes-display-favorites" id="random-themes-display-favorites" class="random-themes-display">
+                                <span class="options-settings-random-themes-enable-favorites"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="favorite-themes-container">
+                        <div class="tab-content">
+                            <div id="available-favorite-themes" class="fade in available-themes-block"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="feedback-dialog" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 id="popup-feedback-dialog-title" class="modal-title"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <form id="feedback-form" class="feedback-form">
+                                <div class="form-group">
+                                    <label id="popup-feedback-dialog-label-email" for="exampleInputEmail"></label><span class="feedback-form-field-required form-field-required-text"></span>
+                                    <input type="email" class="form-control" id="exampleInputEmail" maxlength="255">
+                                    <div class="form-error-text"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label id="popup-feedback-dialog-label-subject" for="exampleInputSubject"></label><span class="feedback-form-field-required form-field-required-text"></span>
+                                    <input type="text" class="form-control" id="exampleInputSubject" maxlength="255">
+                                    <div class="form-error-text"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label id="popup-feedback-dialog-label-description" for="exampleTextArea"></label>
+                                    <textarea class="form-control exampleTextArea" id="exampleTextArea" maxlength="10000"></textarea>
+                                    <div class="form-error-text"></div>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-success" id="feedBackConfirm"></button>
+                                </div>
+                            </form>
+                            <div id="feedback-success" class="feedback-success">
+                                <p id="popup-feedback-dialog-success-text" class="text-center"></p>
+                                <div class="text-center feedback-success-glyphicon">
+                                    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                                </div>
+                                <div class="text-center">
+                                    <button id="feedback-close-btn" class="btn btn-primary"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="share-app-dialog" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center popup-share-top-block popup-share-text-block">
+                            <span id="popup-share-app-dialog-text-1" class="popup-share-app-dialog-text popup-share-app-dialog-text-1"></span>
+                            <span id="popup-share-app-dialog-text-2" class="popup-share-app-dialog-text popup-share-app-dialog-text-2"></span>
+                            <span id="popup-share-app-dialog-text-3" class="popup-share-app-dialog-text popup-share-app-dialog-text-3"></span>
+                            <span id="popup-share-app-dialog-text-4" class="popup-share-app-dialog-text popup-share-app-dialog-text-4 text-right"></span>
+                        </div>
+                        <div class="text-center popup-share-middle-block">
+                            <span id="popup-share-app-dialog-title" class="popup-share-app-dialog-title modal-title"></span>
+                        </div>
+                        <div class="share42init"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade delete-from-favorite-dialog" id="delete-from-favorite-dialog" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                       <div class="text-center">
+                           <p id="delete-from-favorite-dialog-text" class="delete-from-favorite-dialog-text"></p>
+                       </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="delete-from-favorite-dialog-close" type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                        <button id="delete-from-favorite-dialog-confirm" type="button" class="btn btn-primary">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade delete-theme-dialog" id="delete-theme-dialog" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                       <div class="text-center">
+                           <p id="delete-theme-dialog-text" class="delete-theme-dialog-text"></p>
+                       </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="delete-theme-dialog-close" type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                        <button id="delete-theme-dialog-confirm" type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade queue-over-dialog" id="queue-over-dialog" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                       <div class="text-center">
+                           <p id="queue-over-dialog-text" class="queue-over-dialog-text"></p>
+                       </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="queue-over-dialog-ok" type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="video-popover-block" class="video-popover-block">
+            <div id="video-popover" class="popover video-popover" role="tooltip">
+                <div class="arrow"></div>
+                <h3 class="popover-title text-center"></h3>
+                <div class="popover-content"></div>
+            </div>
+        </div>
+    </body>
+</html>

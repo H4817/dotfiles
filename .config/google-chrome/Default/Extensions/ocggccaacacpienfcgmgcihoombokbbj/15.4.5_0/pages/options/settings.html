@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Settings</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+
+        <link rel="icon" href="../../img/icon/icon16.png">
+        
+        <link href="../../vendor/jquery-ui/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="../../vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../vendor/jGrowl/jquery.jgrowl.min.css">
+        <link rel="stylesheet" href="../../vendor/colorpick/css/colpick.css">
+        <link rel="stylesheet" href="css/options.css"/>
+        <!--<link rel="stylesheet" href="css/firefox.css"/>-->
+
+        <script src="../../vendor/head.min.js"></script>
+        <script src="./js/scripts/settings.js"></script>
+            
+        <!--
+        <script src="../../vendor/jquery-2.1.3.min.js"></script>
+        <script src="../../vendor/jquery-ui/js/jquery-ui.js"></script>
+        <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../../vendor/jGrowl/jquery.jgrowl.min.js"></script>
+        <script src="../../vendor/colorpick/js/colpick.js"></script>
+
+        <script src="../common.js"></script>
+        
+        <script src="../../vendor/q.js"></script>
+        <script src="../../vendor/dexie.js"></script>
+        <script src="../../vendor/LargeLocalStorage.min.js"></script>
+        
+        <script src="../analitics.js"></script>
+        <script src="../../browsers/browser-firefox.js"></script>
+        <script src="../../browsers/datebase-firefox.js"></script>
+        <script src="../backend/theme.js"></script>
+        <script src="../backend/groups.js"></script>
+        <script src="../backend/dials.js"></script>
+        <script src="../backend/backend.js"></script>
+        <script src="../backend/install.js"></script>
+        
+        <script src="../../vendor/share42/share42.js"></script>
+        
+        <script src="../../browsers/page-firefox.js"></script>
+        
+        <script src="js/content/header.js"></script>
+        <script src="js/content/rating.js"></script>
+        <script src="js/content/feedback.js"></script>
+        <script src="js/content/weather.js"></script>
+
+        <script src="js/common.js"></script>
+        <script src="js/settings.js"></script>
+        -->
+    </head>
+    <body>
+        <div class="page-title">
+            <img src="../../img/icon/icon256.png" class="options-page-icon">
+            <p id="options-page-title" class="options-page-title"></p>
+            <span class="settings-tab-buttons">
+                <a id="settings-content-tab-button" href="options.html" data-settings-tabid="0" class="btn btn-info settings-tab-button"></a>
+                <a id="settings-favorite-tab-button" href="favorite.html" data-settings-tabid="2" class="btn btn-warning settings-tab-button settings-favorite-tab-button"></a>
+            </span>
+            <div class="options-header-right-block">
+                <span id="share42init-top" class="share42init-top"></span>
+                <a target="_blank" id="vk-group-link" class="btn btn-primary" href="https://vk.com/livestartpage"></a>
+                <a id="settings-control-tab-button" href="settings.html" data-settings-tabid="1" class="btn btn-success settings-control-tab-button"></a>
+                <a target="_blank" id="feedback-link" class="btn btn-warning feedback-link"></a>
+                <a target="_blank" id="help-link" class="btn btn-info help-link"></a>
+                <a id="back-to-newtab-link" class="btn btn-danger back-to-newtab-link"></a>
+            </div>
+        </div>
+
+        <div class="options-header-center-block">
+            <div id="options-application-rating-popup" class="options-application-rating-popup">
+                <div class="options-application-rating-popup-data">
+                    <div id="options-application-rating-popup-title-mark" class="options-application-rating-popup-title"></div>
+                    <a data-rating="2" id="options-application-rating-popup-item-bad" class="options-application-rating-item"></a>
+                    <a data-rating="3" id="options-application-rating-popup-item-better" class="options-application-rating-item"></a>
+                    <a data-rating="4" id="options-application-rating-popup-item-awesome" class="options-application-rating-item"></a>
+                    <a data-rating="1" id="options-application-rating-popup-item-already" class="options-application-rating-item"></a>
+                </div>
+                <div class="options-application-rating-popup-stars">
+                    <div id="options-application-rating-popup-title-thanks" class="options-application-rating-popup-title"></div>
+                    <img src="css/img/buttons/rating-star.png" alt="star" class="options-application-rating-popup-star-item">
+                    <img src="css/img/buttons/rating-star.png" alt="star" class="options-application-rating-popup-star-item">
+                    <img src="css/img/buttons/rating-star.png" alt="star" class="options-application-rating-popup-star-item">
+                    <img src="css/img/buttons/rating-star.png" alt="star" class="options-application-rating-popup-star-item">
+                    <img src="css/img/buttons/rating-star.png" alt="star" class="options-application-rating-popup-star-item">
+                </div>
+            </div>
+        </div>
+
+        <div class="settings-tabs-content">
+            <div id="settings-control-tab-1" data-settings-content-tabid="1" class="settings-tabs">
+                <div class="page-options">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="bs-callout bs-callout-danger">
+                                <h4 id="options-settings-speed-dial-title"></h4>
+                                <span>
+                                    <div class="dials-block-display">
+                                        <label for="dials-display">
+                                            <span id="options-settings-speed-dial-show"></span>:
+                                            <input type="checkbox" name="dials-display" id="dials-display">
+                                        </label>
+                                    </div>
+                                    <div id="dials-settings" class="dials-settings">
+                                        <div id="dials-columns-count" class="dials-columns-count">
+                                            <div class="dials-columns-count-wrap">
+                                                <span class="options-settings-speed-dial-dials-columns-count"><span id="options-settings-speed-dial-dials-columns-count"></span>:</span>
+                                            </div>
+                                            <div class="dials-columns-count-wrap">
+                                                <label for="dials-columns-count-1">
+                                                    <input type="radio" name="dials-columns-count" id="dials-columns-count-1" data-dials-columns-count="1" class="dials-columns-count-item"> 1
+                                                </label>
+                                                <label for="dials-columns-count-2">
+                                                    <input type="radio" name="dials-columns-count" id="dials-columns-count-2" data-dials-columns-count="2" class="dials-columns-count-item"> 2
+                                                </label>
+                                                <label for="dials-columns-count-3">
+                                                    <input type="radio" name="dials-columns-count" id="dials-columns-count-3" data-dials-columns-count="3" class="dials-columns-count-item"> 3
+                                                </label>
+                                                <label for="dials-columns-count-4">
+                                                    <input type="radio" name="dials-columns-count" id="dials-columns-count-4" data-dials-columns-count="4" class="dials-columns-count-item"> 4
+                                                </label>
+                                                <label for="dials-columns-count-5">
+                                                    <input type="radio" name="dials-columns-count" id="dials-columns-count-5" data-dials-columns-count="5" class="dials-columns-count-item"> 5
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="popular-group-display">
+                                            <label for="popular-group-display">
+                                                <span id="options-settings-popular-group-show"></span> <span id="options-settings-popular-group-show-name"></span>:
+                                                <input type="checkbox" name="popular-group-display" id="popular-group-display">
+                                            </label>
+                                        </div>
+                                        <div id="popular-dials-settings" class="popular-dials-settings">
+                                            <div id="dial-count-selector" class="dial-count-selector">
+                                                <label>
+                                                    <span id="options-settings-speed-dial-count"></span>:
+                                                    <input type="number" min="1" max="40" name="dials-count" id="dials-count">
+                                                    <span id="options-settings-speed-dial-count-description" class="options-settings-speed-dial-count-description">(<span id="options-settings-speed-dial-count-max-description"></span> <span id="options-settings-speed-dial-count-max-group-name">Most Visited</span>. 40 <span id="options-settings-speed-dial-count-max"></span>)</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div id="dials-open-type" class="dials-open-type">
+                                            <label>
+                                                <span id="options-settings-speed-dial-open-type"></span>:
+                                                <select name="dials-open" id="dials-open" class="dials-open">
+                                                    <option value="0" id="options-settings-speed-dial-open-type-current"></option>
+                                                    <option value="1" id="options-settings-speed-dial-open-type-new"></option>
+                                                    <option value="2" id="options-settings-speed-dial-open-type-background"></option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                        <div id="dials-generate-type" class="dials-generate-type">
+                                                <div class="dials-generate-type-wrap">
+                                                    <label><span class="options-settings-speed-dial-generate-type"><span id="options-settings-speed-dial-generate-type"></span>:</span></label>
+                                                </div>
+                                                <div class="dials-generate-type-wrap">
+                                                    <label for="speed-dial-generate-type-text">
+                                                        <input type="radio" name="speed-dial-generate-type" id="speed-dial-generate-type-text"
+                                                               data-new-dial-thumb-generate-type="1" class="speed-dial-generate-type-item"> <span id="speed-dial-generate-type-text-label"></span>
+                                                    </label>
+                                                    <br>
+                                                    <label for="speed-dial-generate-type-gallery-text">
+                                                        <input type="radio" name="speed-dial-generate-type" id="speed-dial-generate-type-gallery-text"
+                                                               data-new-dial-thumb-generate-type="2" class="speed-dial-generate-type-item"> <span id="speed-dial-generate-type-gallery-text-label"></span>
+                                                    </label>
+                                                    <br>
+                                                    <label for="speed-dial-generate-type-autopreview-text">
+                                                        <input type="radio" name="speed-dial-generate-type" id="speed-dial-generate-type-autopreview-text"
+                                                               data-new-dial-thumb-generate-type="3" class="speed-dial-generate-type-item"> <span id="speed-dial-generate-type-autopreview-text-label"></span>
+                                                    </label>
+                                                    <br>
+                                                    <label for="speed-dial-generate-type-gallery-autopreview-text">
+                                                        <input type="radio" name="speed-dial-generate-type" id="speed-dial-generate-type-gallery-autopreview-text"
+                                                               data-new-dial-thumb-generate-type="4" class="speed-dial-generate-type-item"> <span id="speed-dial-generate-type-gallery-autopreview-text-label"></span>
+                                                    </label>
+                                                    <br>
+                                                </div>
+                                        </div>
+                                        <div class="dials-form-opacity">
+                                            <label for="dials-form-min-opacity">
+                                                <span id="options-settings-speed-dial-opacity"></span>:
+                                                <span id="dials-form-min-opacity" class="dials-form-min-opacity"></span>
+                                            </label>
+                                            <div id="dials-form-min-opacity-slider"></div>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="bs-callout bs-callout-info">
+                                <h4 id="options-settings-weather-title"></h4>
+                                <span>
+                                    <div>
+                                        <div class="weather-display">
+                                            <label for="weather-display">
+                                                <span id="options-settings-weather-show"></span>:
+                                                <input type="checkbox" name="weather-display" id="weather-display">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div id="weather-settings" class="weather-settings">
+                                        <div class="weather-location">
+                                                <label for="weather-location">
+                                                    <span id="options-settings-weather-location"></span>:
+                                                    <span id="options-settings-weather-location-text" class="options-settings-weather-location-text">
+                                                        <span id="options-settings-weather-location-description" class="options-settings-weather-location-description"></span>
+                                                        <button id="options-settings-weather-location-change" class="btn btn-sm btn-primary options-settings-weather-location-change"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+                                                    </span>
+                                                    <span id="options-settings-weather-location-input" class="options-settings-weather-location-input">
+                                                        <form id="options-settings-weather-location-form" class="options-settings-weather-location-form">
+                                                            <input type="text" name="weather-location" id="weather-location">
+                                                            <button type="submit" id="options-settings-weather-location-set" class="btn btn-sm btn-success options-settings-weather-location-set"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+                                                            <button id="options-settings-weather-location-cancel" class="btn btn-sm btn-danger options-settings-weather-location-cancel"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                                                            <button id="weather-location-current-img" class="btn btn-sm btn-info weather-location-current-img"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></button>
+                                                        </form>
+                                                    </span>
+                                                </label>
+                                                <div id="weather-location-current-block-text" class="weather-location-current-block-text"></div>
+                                        </div>
+                                        <div class="weather-unit">
+                                            <span class="input-label">
+                                                <span id="options-settings-weather-unit"></span>:
+                                                <label for="weather-unit-c">
+                                                    <input type="radio" name="weather-unit" id="weather-unit-c"
+                                                           data-weather-unit="c" class="weather-unit-item"> C
+                                                </label>
+                                                <label for="weather-unit-f">
+                                                    <input type="radio" name="weather-unit" id="weather-unit-f"
+                                                           data-weather-unit="f" class="weather-unit-item"> F
+                                                </label>
+                                            </span>
+                                        </div>
+                                        <div class="weather-unit-display">
+                                            <label for="weather-unit-display">
+                                                <span id="options-settings-weather-unit-show"></span>:
+                                                <input type="checkbox" name="weather-unit-display" id="weather-unit-display">
+                                            </label>
+                                        </div>
+                                        <div class="weather-background-display">
+                                            <label for="weather-background-display">
+                                                <span id="options-settings-weather-background-show"></span>:
+                                                <input type="checkbox" name="weather-background-display" id="weather-background-display">
+                                            </label>
+                                        </div>
+                                        <div class="weather-opacity">
+                                            <label for="clock-opacity-value">
+                                                <span id="options-settings-weather-opacity"></span>:
+                                                        <span id="weather-opacity-value"
+                                                              class="weather-opacity-value"></span>
+                                            </label>
+
+                                            <div id="weather-opacity-slider"></div>
+                                        </div>
+                                        <div id="weather-background-opacity" class="weather-background-opacity">
+                                            <label for="weather-background-opacity-value">
+                                                <span id="options-settings-weather-background-opacity"></span>:
+                                                        <span id="weather-background-opacity-value"
+                                                              class="weather-background-opacity-value"></span>
+                                            </label>
+                                            <div id="weather-background-opacity-slider"></div>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div>
+                                <div class="bs-callout bs-callout-success">
+                                    <h4 id="options-settings-todo-title"></h4>
+                                    <span>
+                                        <div class="todo-display">
+                                            <label for="todo-display">
+                                                <span id="options-settings-todo-show"></span>:
+                                                <input type="checkbox" name="todo-display" id="todo-display">
+                                            </label>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="bs-callout bs-callout-success">
+                                    <h4 id="options-settings-top-panel"></h4>
+                                    <span>
+                                        <div class="apps-link-display">
+                                            <label for="apps-link-display">
+                                                <span id="options-settings-apps-link-display"></span>:
+                                                <input type="checkbox" name="apps-link-display" id="apps-link-display">
+                                            </label>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="bs-callout bs-callout-success">
+                                    <h4 id="options-settings-bottom-panel"></h4>
+                                    <span>
+                                        <div id="page-bottom-panel-opacity" class="page-bottom-panel-opacity">
+                                            <label for="page-bottom-panel-opacity-value">
+                                                <span id="options-settings-page-bottom-panel-opacity"></span>:
+                                                            <span id="page-bottom-panel-opacity-value"
+                                                                  class="page-bottom-panel-opacity-value"></span>
+                                            </label>
+                                            <div id="page-bottom-panel-opacity-slider"></div>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="bs-callout bs-callout-info">
+                                <h4 id="options-settings-clock-title"></h4>
+                                <span>
+                                    <div class="clock-display">
+                                        <label for="clock-display">
+                                            <span id="options-settings-clock-show"></span>:
+                                            <input type="checkbox" name="clock-display" id="clock-display">
+                                        </label>
+                                    </div>
+                                    <div id="clock-settings" class="clock-settings">
+                                        <ul class="nav nav-tabs nav-justified options-settings-clock-ul" role="tablist">
+                                            <li role="presentation" class="active">
+                                                <a id="options-settings-clock-basic-href" href="#clock-basic" aria-controls="clock-basic" role="tab"
+                                                   data-toggle="tab"></a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a id="options-settings-clock-advanced-href" href="#clock-advanced" aria-controls="clock-advanced" role="tab"
+                                                   data-toggle="tab"></a>
+                                            </li>
+                                        </ul>
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane active" id="clock-basic">
+                                                <div class="clock-format">
+                                                    <span class="input-label">
+                                                        <span id="options-settings-clock-format"></span>:
+                                                        <label for="clock-format-1">
+                                                            <input type="radio" name="clock-format" id="clock-format-1"
+                                                                   data-clock-format="1" class="clock-format-item"> 12H
+                                                        </label>
+                                                        <label for="clock-format-0">
+                                                            <input type="radio" name="clock-format" id="clock-format-0"
+                                                                   data-clock-format="0" class="clock-format-item"> 24H
+                                                        </label>
+                                                    </span>
+                                                </div>
+                                                <div id="clock-format-label-block" class="clock-format-label-block">
+                                                    <label for="clock-format-label">
+                                                        <span id="options-settings-clock-format-label"></span>:
+                                                        <input type="checkbox" name="clock-format-label"
+                                                               id="clock-format-label">
+                                                    </label>
+                                                </div>
+                                                <div id="clock-visible-label-block" class="clock-visible-label-block">
+                                                    <label for="clock-visible-label">
+                                                        <span id="options-settings-clock-visible-label"></span>:
+                                                        <input type="checkbox" name="clock-visible-label"
+                                                               id="clock-visible-label">
+                                                    </label>
+                                                </div>
+                                                <div id="clock-type-block" class="clock-type-block">
+                                                    <label>
+                                                        <span id="options-settings-clock-type"></span>:
+                                                        <select name="clock-type" id="clock-type">
+                                                            <option value="3"
+                                                                    id="options-settings-clock-type-3"></option>
+                                                            <option value="0"
+                                                                    id="options-settings-clock-type-0"></option>
+                                                            <option value="5"
+                                                                    id="options-settings-clock-type-5"></option>
+                                                            <option value="6"
+                                                                    id="options-settings-clock-type-6"></option>
+                                                            <option value="7"
+                                                                    id="options-settings-clock-type-7"></option>
+                                                            <option value="9"
+                                                                    id="options-settings-clock-type-9"></option>
+                                                            <option value="10"
+                                                                    id="options-settings-clock-type-10"></option>
+                                                        </select>
+                                                    </label>
+                                                </div>
+                                                <div id="clock-colors-block" class="clock-colors-block">
+                                                    <label id="clock-color-text-h" class="clock-color-text-h"></label>
+                                                        <span class="clock-color-scheme">
+                                                            <button id="clock-color-scheme-default"
+                                                                    class="btn btn-sm btn-info clock-color-scheme-btn clock-color-scheme-default">
+                                                            </button>
+                                                            <button id="clock-color-scheme-light"
+                                                                    class="btn btn-sm clock-color-scheme-btn clock-color-scheme-light">
+                                                            </button>
+                                                            <button id="clock-color-scheme-dark"
+                                                                    class="btn btn-sm clock-color-scheme-btn clock-color-scheme-dark">
+                                                            </button>
+                                                        </span>
+                                                    <hr>
+                                                    <div id="clock-colors-block-items" class="clock-colors-block-items">
+                                                        <div id="clock-time-color-block" class="clock-color-block">
+                                                            <span id="clock-time-color-text"
+                                                                  class="clock-color-text"></span>
+                                                                <span class="clock-mini-colors">
+                                                                    <input type="text" id="clock-time-color"
+                                                                           class="mini-colors" value=""/>
+                                                                    <div class="color-border"></div>
+                                                                </span>
+
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div id="clock-label-color-block" class="clock-color-block">
+                                                            <span id="clock-label-color-text"
+                                                                  class="clock-color-text"></span>
+                                                                <span class="clock-mini-colors">
+                                                                    <input type="text" id="clock-label-color"
+                                                                           class="mini-colors" value=""/>
+                                                                    <div class="color-border"></div>
+                                                                </span>
+
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div id="clock-ampm-label-color-block"
+                                                             class="clock-color-block clock-ampm-label-color-block">
+                                                            <span id="clock-ampm-label-color-text"
+                                                                  class="clock-color-text"></span>
+                                                                <span class="clock-mini-colors">
+                                                                    <input type="text" id="clock-ampm-label-color"
+                                                                           class="mini-colors" value=""/>
+                                                                    <div class="color-border"></div>
+                                                                </span>
+
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div id="clock-digit-bg-color-block"
+                                                             class="clock-color-block">
+                                                            <span id="clock-digit-bg-color-text"
+                                                                  class="clock-color-text"></span>
+                                                                <span class="clock-mini-colors">
+                                                                    <input type="text" id="clock-digit-bg-color"
+                                                                           class="mini-colors" value=""/>
+                                                                    <div class="color-border"></div>
+                                                                </span>
+
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div id="clock-circle-done-line-color-block"
+                                                             class="clock-color-block">
+                                                            <span id="clock-circle-done-line-color-text"
+                                                                  class="clock-color-text"></span>
+                                                                <span class="clock-mini-colors">
+                                                                    <input type="text" id="clock-circle-done-line-color"
+                                                                           class="mini-colors" value=""/>
+                                                                    <div class="color-border"></div>
+                                                                </span>
+
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div id="clock-circle-total-line-color-block"
+                                                             class="clock-color-block">
+                                                            <span id="clock-circle-total-line-color-text"
+                                                                  class="clock-color-text"></span>
+                                                                <span class="clock-mini-colors">
+                                                                    <input type="text"
+                                                                           id="clock-circle-total-line-color"
+                                                                           class="mini-colors" value=""/>
+                                                                    <div class="color-border"></div>
+                                                                </span>
+
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div id="clock-border-line-color-block"
+                                                             class="clock-color-block">
+                                                            <span id="clock-border-line-color-text"
+                                                                  class="clock-color-text"></span>
+                                                                <span class="clock-mini-colors">
+                                                                    <input type="text" id="clock-border-line-color"
+                                                                           class="mini-colors" value=""/>
+                                                                    <div class="color-border"></div>
+                                                                </span>
+
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="clock-advanced">
+                                                <div class="clock-seconds">
+                                                    <label for="clock-seconds">
+                                                        <span id="options-settings-clock-seconds-show"></span>:
+                                                        <input type="checkbox" name="clock-seconds" id="clock-seconds">
+                                                    </label>
+                                                </div>
+                                                <div id="clock-font-bold-block" class="clock-font-bold-block">
+                                                    <label for="clock-font-bold">
+                                                        <span id="options-settings-clock-font-bold"></span>:
+                                                        <input type="checkbox" name="clock-font-bold"
+                                                               id="clock-font-bold">
+                                                    </label>
+                                                </div>
+                                                <div id="clock-background-block" class="clock-background-block">
+                                                    <label>
+                                                        <span id="options-settings-clock-background"></span>:
+                                                        <select name="clock-type" id="clock-background">
+                                                            <option value="0"
+                                                                    id="options-settings-clock-background-none"></option>
+                                                            <option value="1"
+                                                                    id="options-settings-clock-background-light"></option>
+                                                            <option value="2"
+                                                                    id="options-settings-clock-background-dark"></option>
+                                                            <option value="3"
+                                                                    id="options-settings-clock-background-light-long"></option>
+                                                            <option value="4"
+                                                                    id="options-settings-clock-background-dark-long"></option>
+                                                        </select>
+                                                    </label>
+                                                </div>
+                                                <div class="clock-opacity">
+                                                    <label for="clock-opacity-value">
+                                                        <span id="options-settings-clock-opacity"></span>:
+                                                        <span id="clock-opacity-value"
+                                                              class="clock-opacity-value"></span>
+                                                    </label>
+
+                                                    <div id="clock-opacity-slider"></div>
+                                                </div>
+                                                <div id="clock-background-opacity" class="clock-background-opacity">
+                                                    <label for="clock-background-opacity-value">
+                                                        <span id="options-settings-clock-background-opacity"></span>:
+                                                        <span id="clock-background-opacity-value"
+                                                              class="clock-background-opacity-value"></span>
+                                                    </label>
+                                                    <div id="clock-background-opacity-slider"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="bs-callout bs-callout-warning">
+                                <h4 id="options-settings-speed-search-title"></h4>
+                                <span>
+                                    <div>
+                                        <label for="search-form-display">
+                                            <span id="options-settings-search-form-display"></span>:
+                                            <input type="checkbox" name="search-form-display" id="search-form-display">
+                                        </label>
+                                    </div>
+                                    <div id="search-form-settings" class="search-form-settings">
+                                        <div id="search-form-provider" class="search-form-provider">
+                                            <span class="input-label">
+                                                <span id="options-settings-search-form-provider">Search with</span>:
+                                                <label for="search-form-provider-1">
+                                                    <input type="radio" name="search-form-provider" id="search-form-provider-1"
+                                                           data-search-provider="1" class="search-form-provider-item"> LiveStartPage
+                                                </label>
+                                                <label for="search-form-provider-2">
+                                                    <input type="radio" name="search-form-provider" id="search-form-provider-2"
+                                                           data-search-provider="2" class="search-form-provider-item"> Yandex
+                                                </label>
+                                            </span>
+                                        </div>
+                                        <div class="search-form-opacity">
+                                            <label for="search-form-min-opacity">
+                                                <span id="options-settings-speed-search-opacity"></span>:
+                                                <span id="search-form-min-opacity" class="search-form-min-opacity"></span>
+                                            </label>
+                                            <div id="search-form-min-opacity-slider"></div>
+                                        </div>
+                                        <div id="search-open-type" class="search-open-type">
+                                            <label>
+                                                <span id="options-settings-search-open-type"></span>:
+                                                <select name="search-open" id="search-open">
+                                                    <option value="0" id="options-settings-search-open-type-current"></option>
+                                                    <option value="1" id="options-settings-search-open-type-new"></option>
+                                                    <option value="2" id="options-settings-search-open-type-background"></option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="settings-parallax-subitem">
+                                <div class="bs-callout bs-callout-primary">
+                                    <h4 id="options-settings-parallax-title" class="options-settings-parallax-title"></h4>
+                                    <span id="options-settings-parallax-subtitle" class="options-settings-parallax-subtitle"></span>
+                                <span>
+                                    <div id="background-parallax-display" class="background-parallax-display">
+                                        <div>
+                                            <label for="parallax-display">
+                                                <span id="options-settings-parallax-enable"></span>:
+                                                <input type="checkbox" name="parallax-display" id="parallax-display">
+                                            </label><span id="options-settings-parallax-enable-notice" class="options-settings-parallax-enable-notice"></span>
+                                        </div>
+                                        <div id="background-parallax-value" class="background-parallax-value">
+                                            <label for="parallax-value">
+                                                <span id="options-settings-parallax-strength"></span>:
+                                                <span id="parallax-value" class="parallax-value"></span>
+                                            </label>
+                                            <div id="parallax-value-slider"></div>
+                                        </div>
+                                    </div>
+                                </span>
+                                </div>
+                            </div>
+                            <div class="settings-relax-subitem">
+                                <div class="bs-callout bs-callout-primary">
+                                    <h4 id="options-settings-relax-title" class="options-settings-relax-title"></h4>
+                                <span>
+                                    <div id="background-relax-display" class="background-relax-display">
+                                        <div>
+                                            <label for="relax-display">
+                                                <span id="options-settings-relax-enable"></span>:
+                                                <input type="checkbox" name="relax-display" id="relax-display">
+                                            </label><span id="options-settings-relax-enable-notice" class="options-settings-relax-enable-notice"></span>
+                                        </div>
+                                    </div>
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="feedback-dialog" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 id="popup-feedback-dialog-title" class="modal-title"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <form id="feedback-form" class="feedback-form">
+                                <div class="form-group">
+                                    <label id="popup-feedback-dialog-label-email" for="exampleInputEmail"></label><span class="feedback-form-field-required form-field-required-text"></span>
+                                    <input type="email" class="form-control" id="exampleInputEmail" maxlength="255">
+                                    <div class="form-error-text"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label id="popup-feedback-dialog-label-subject" for="exampleInputSubject"></label><span class="feedback-form-field-required form-field-required-text"></span>
+                                    <input type="text" class="form-control" id="exampleInputSubject" maxlength="255">
+                                    <div class="form-error-text"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label id="popup-feedback-dialog-label-description" for="exampleTextArea"></label>
+                                    <textarea class="form-control exampleTextArea" id="exampleTextArea" maxlength="10000"></textarea>
+                                    <div class="form-error-text"></div>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-success" id="feedBackConfirm"></button>
+                                </div>
+                            </form>
+                            <div id="feedback-success" class="feedback-success">
+                                <p id="popup-feedback-dialog-success-text" class="text-center"></p>
+                                <div class="text-center feedback-success-glyphicon">
+                                    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                                </div>
+                                <div class="text-center">
+                                    <button id="feedback-close-btn" class="btn btn-primary"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="share-app-dialog" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center popup-share-top-block popup-share-text-block">
+                            <span id="popup-share-app-dialog-text-1" class="popup-share-app-dialog-text popup-share-app-dialog-text-1"></span>
+                            <span id="popup-share-app-dialog-text-2" class="popup-share-app-dialog-text popup-share-app-dialog-text-2"></span>
+                            <span id="popup-share-app-dialog-text-3" class="popup-share-app-dialog-text popup-share-app-dialog-text-3"></span>
+                            <span id="popup-share-app-dialog-text-4" class="popup-share-app-dialog-text popup-share-app-dialog-text-4 text-right"></span>
+                        </div>
+                        <div class="text-center popup-share-middle-block">
+                            <span id="popup-share-app-dialog-title" class="popup-share-app-dialog-title modal-title"></span>
+                        </div>
+                        <div class="share42init"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="../analitics.js"></script>
+    </body>
+</html>

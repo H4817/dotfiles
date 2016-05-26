@@ -1,0 +1,114 @@
+{
+   "checksum": "a418b224591b71a0013fa758c4a98613",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13107871488862510",
+            "id": "6",
+            "name": "twitch",
+            "type": "url",
+            "url": "https://www.twitch.tv/directory/game/Hearthstone%3A%20Heroes%20of%20Warcraft"
+         }, {
+            "date_added": "13107871502925114",
+            "id": "7",
+            "name": "Новости",
+            "type": "url",
+            "url": "https://vk.com/feed"
+         }, {
+            "date_added": "13107871546414573",
+            "id": "8",
+            "name": "github",
+            "type": "url",
+            "url": "https://github.com/JakimychevNikolaj"
+         }, {
+            "date_added": "13107875048448316",
+            "id": "11",
+            "name": "YouTube",
+            "type": "url",
+            "url": "https://www.youtube.com/"
+         }, {
+            "date_added": "13107905582651845",
+            "id": "14",
+            "name": "JoyReactor",
+            "type": "url",
+            "url": "http://joyreactor.cc/"
+         }, {
+            "date_added": "13108074596193727",
+            "id": "17",
+            "name": "Односвязный линейный список",
+            "type": "url",
+            "url": "http://prog-cpp.ru/data-ols/"
+         }, {
+            "date_added": "13108315545328049",
+            "id": "20",
+            "name": "4PDA",
+            "type": "url",
+            "url": "http://4pda.ru/"
+         }, {
+            "date_added": "13108317599865846",
+            "id": "21",
+            "name": "OpenNet",
+            "type": "url",
+            "url": "http://www.opennet.ru/"
+         }, {
+            "date_added": "13108397210765777",
+            "id": "22",
+            "name": "java - Setting the thrust position on a moving and rotating object - Stack Overflow",
+            "type": "url",
+            "url": "http://stackoverflow.com/questions/10018173/setting-the-thrust-position-on-a-moving-and-rotating-object"
+         }, {
+            "date_added": "13108397244199640",
+            "id": "23",
+            "name": "Rotating sprite around its center AND resizing it",
+            "type": "url",
+            "url": "http://en.sfml-dev.org/forums/index.php?topic=7509.0"
+         }, {
+            "date_added": "13108511771690441",
+            "id": "24",
+            "name": "Конструктор копирования в С++: язык программирования C++",
+            "type": "url",
+            "url": "http://cppstudio.com/post/9903/"
+         }, {
+            "date_added": "13108512554025734",
+            "id": "25",
+            "name": "Краткое введение в rvalue-ссылки / Хабрахабр",
+            "type": "url",
+            "url": "https://habrahabr.ru/post/226229/"
+         }, {
+            "date_added": "13108513111061740",
+            "id": "26",
+            "name": "C++0x : rvalue выражения и move-конструктор | Блог Влада Сухачева",
+            "type": "url",
+            "url": "https://vsukhachev.wordpress.com/2011/06/05/c0x-rvalue-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B8-move-%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D0%BE%D1%80/"
+         }, {
+            "date_added": "13108555365721766",
+            "id": "27",
+            "name": "8 vim plugins that increase productivity",
+            "type": "url",
+            "url": "http://blog.humblecoder.com/8-vim-plugins-that-increase-productivity/"
+         } ],
+         "date_added": "13107871390442295",
+         "date_modified": "13108555365721766",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13107871390442301",
+         "date_modified": "0",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13107871390442302",
+         "date_modified": "0",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

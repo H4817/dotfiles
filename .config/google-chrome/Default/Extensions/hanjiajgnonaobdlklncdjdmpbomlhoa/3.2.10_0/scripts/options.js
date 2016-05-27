@@ -1,1 +1,0 @@
-"use strict";location.href="https://vk.com/settings?act=musicsig";

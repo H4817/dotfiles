@@ -6,12 +6,21 @@ let mapleader=","
 nmap <silent> <leader><leader> :NERDTreeToggle<CR>
 
 syntax on
-set number
+" set number
+
+set relativenumber
+
+set cursorline
 
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
 
 set splitbelow
 set splitright
@@ -27,6 +36,12 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
 Plug 'w0ng/vim-hybrid'
 Plug 'tpope/vim-fugitive'
+Plug 'nanotech/jellybeans.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'SirVer/ultisnips'
+
+ Plug 'lifepillar/vim-wwdc16-theme'
 
 call plug#end()
 
@@ -56,5 +71,9 @@ let g:syntastic_aggregate_errors = 1
 
 let g:syntastic_check_on_wq = 0
 
+let g:jellybeans_overrides = {
+\    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
+\}
+
 set background=dark
-colorscheme hybrid
+colorscheme jellybeans

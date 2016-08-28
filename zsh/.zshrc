@@ -8,11 +8,14 @@
 
 bindkey -M viins ‘jj’ vi-cmd-mode
 
+
+
 ZSH_THEME="agnoster"
 
 ENABLE_CORRECTION="true"
 
 plugins=(git)
+plugins=(zsh-autosuggestions)
 
 # User configuration
 
@@ -51,7 +54,11 @@ alias remove='yaourt -Rs'
 
 alias poff='sudo systemctl poweroff'
 
+alias caps='xmodmap ~/.Xmodmap'
+
 source $ZSH/oh-my-zsh.sh
+
+
 
 
 # You may need to manually set your language environment
@@ -70,3 +77,5 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"<Paste>
 bindkey -v
+COMPLETION_WAITING_DOTS="false"
+zstyle ':completion:*' menu select

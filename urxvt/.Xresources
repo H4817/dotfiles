@@ -1,39 +1,28 @@
-! Hybrid Terminal Colours. Uses the palette from Tomorrow-Night:
-! https://github.com/chriskempson/tomorrow-theme/blob/master/vim/colors/Tomorrow-Night.vim
-! vim: ft=xdefaults
-
 *background: #1D1F21
 *foreground: #C5C8C6
-! black
-*color0: #282A2E
-*color8: #373B41
-! red
-*color1: #A54242
-*color9: #CC6666
-! green
-*color2: #8C9440
-*color10: #B5BD68
-! yellow
-*color3: #DE935F
-*color11: #F0C674
-! blue
-*color4: #5F819D
-*color12: #81A2BE
-! magenta
-*color5: #85678F
-*color13: #B294BB
-! cyan
-*color6: #5E8D87
-*color14: #8ABEB7
-! white
-*color7: #707880
-*color15: #C5C8C6
+
+*color0:   #393939
+*color1:   #ca674a
+*color2:   #96a967
+*color3:   #d3a94a
+*color4:   #5778c1
+*color5:   #9c35ac
+*color6:   #6eb5f3
+*color7:   #a9a9a9
+*color8:   #535551
+*color9:   #ea2828
+*color10:   #87dd32
+*color11:   #f7e44d
+*color12:   #6f9bca
+*color13:   #a97ca4
+*color14:   #32dddd
+*color15:   #e9e9e7
 
 URxvt.scrollBar: false
 
-! URxvt.font:xft:Meslo LG M DZ for Powerline:bold:pixelsize=15:antialias=true:hinting=true
+! U.font:xft:Meslo LG M DZ for Powerline:bold:pixelsize=15:antialias=true:hinting=true
 
 urxvt*font:xft:Meslo LG M DZ for Powerline:bold:pixelsize=15
 
-! URxvt.font:xft:Source Code Pro for Powerline:size=15:antialias=true:hinting=true
+! U.font:xft:Source Code Pro for Powerline:size=15:antialias=true:hinting=true
 

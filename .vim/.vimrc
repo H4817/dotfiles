@@ -3,7 +3,10 @@ runtime! archlinux.vim
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
 nmap K i<CR><Esc>
+inoremap kj <Esc>
+cnoremap kj <Esc>
 
+let mapleader= "\<Space>"
 
 " Options {{{1
 set relativenumber
@@ -18,6 +21,8 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+set list
+set listchars=tab:▸\ ,eol:¬
 
 set splitbelow
 set splitright
@@ -47,6 +52,7 @@ Plug 'tpope/vim-repeat'
 Plug 'SirVer/ultisnips'
 Plug 'flazz/vim-colorschemes'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'majutsushi/tagbar'
 
 call plug#end()
 
@@ -93,7 +99,7 @@ set statusline+=%*
 " Leaders {{{1
 noremap <Leader>s :update<CR>
 nmap <silent> <leader><leader> :NERDTreeToggle<CR>
-" let mapleader=","
+nnoremap <leader>v :tabnew $MYVIMRC<CR>
 
 
 " Colorscheme {{{1

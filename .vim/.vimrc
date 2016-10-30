@@ -1,10 +1,15 @@
 runtime! archlinux.vim
 
+syntax on
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
 nmap K i<CR><Esc>
 inoremap kj <Esc>
 cnoremap kj <Esc>
+inoremap <C-j> <Esc>O<Esc>jA
+inoremap <C-k> <Esc>ddkPA
+nmap <c-s> :w<CR>
+imap <c-s> <Esc>:w<CR>a
 
 let mapleader= "\<Space>"
 
@@ -16,6 +21,10 @@ set nohlsearch
 set incsearch
 set ignorecase
 set smartcase
+
+set nobackup 	                            " no backup files
+set nowritebackup                           " only in case you don't want a backup file while editing
+set noswapfile 	                            " no swap files
 
 set tabstop=4
 set shiftwidth=4
@@ -39,24 +48,26 @@ set imsearch=0
 highlight lCursor guifg=NONE guibg=Cyan
 
 " Plugins {{{1
-call plug#begin()
+call plug#begin('~/.config/nvim/plugged')
 
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'SirVer/ultisnips'
 Plug 'flazz/vim-colorschemes'
-Plug 'terryma/vim-multiple-cursors'
+Plug 'Valloric/YouCompleteMe'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar'
+Plug 'mileszs/ack.vim'
+Plug 'scrooloose/syntastic'
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
-
-syntax on
 
 " Syntastic {{{2
 let g:syntastic_always_populate_loc_list = 0
@@ -96,11 +107,29 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" Ultisnips {{{2
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsSnippetsDir="~/.config/nvim/plugged/vim-snippets/UltiSnips"
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:UltiSnipsListSnippets="<c-l>"
+let g:ycm_show_diagnostics_ui = 0
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
 " Leaders {{{1
 noremap <Leader>s :update<CR>
 nmap <silent> <leader><leader> :NERDTreeToggle<CR>
 nnoremap <leader>v :tabnew $MYVIMRC<CR>
-
+nnoremap <leader>r :so $MYVIMRC<CR>
+nmap <leader>t :TagbarToggle<CR>
 
 " Colorscheme {{{1
 set background=dark

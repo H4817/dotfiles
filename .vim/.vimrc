@@ -4,14 +4,24 @@ syntax on
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
 nmap K i<CR><Esc>
-inoremap kj <Esc>
-cnoremap kj <Esc>
+
+inoremap <M-d> <Esc>ldwi
+inoremap <C-d> <Delete>
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
+
 inoremap <C-j> <Esc>O<Esc>jA
 inoremap <C-k> <Esc>ddkPA
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>a
 
 let mapleader= "\<Space>"
+" C++ settings {{{1
+let &path.="src/include,/usr/include/AL,"
+set includeexpr=substitute(v:fname,'\\.','/','g')
+set makeprg=make\ -C\ ../build\ -j9
+nnoremap <F4> :make!<cr>
+autocmd BufNewFile *.cpp r /path/to/file.cpp
 
 " Options {{{1
 set relativenumber
@@ -27,9 +37,13 @@ set nowritebackup                           " only in case you don't want a back
 set noswapfile 	                            " no swap files
 
 set tabstop=4
-set shiftwidth=4
 set softtabstop=4
-set expandtab
+set shiftwidth=4
+set noexpandtab
+
+set colorcolumn=110
+highlight ColorColumn ctermbg=darkgray
+
 set list
 set listchars=tab:▸\ ,eol:¬
 

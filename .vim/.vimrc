@@ -10,6 +10,11 @@ inoremap <C-d> <Delete>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 
+"auto formatting
+" imap <c-q> <Esc> gggqGgi  
+nmap <c-q> gg=G<c-o><c-o>
+imap <c-q> <Esc> gg=G<c-o><c-o>i
+
 inoremap <C-j> <Esc>O<Esc>jA
 inoremap <C-k> <Esc>ddkPA
 nmap <c-s> :w<CR>
@@ -23,9 +28,23 @@ set makeprg=make\ -C\ ../build\ -j9
 nnoremap <F4> :make!<cr>
 autocmd BufNewFile *.cpp r /path/to/file.cpp
 
+" Gui settings {{{1
+if has("gui_running")
+	set guioptions-=T
+	set guioptions-=r
+	set guioptions-=R
+	set guioptions-=m
+	set guioptions-=l
+	set guioptions-=L
+	set guitablabel=%t
+endif
+
 " Options {{{1
 set relativenumber
 set cursorline
+
+set autochdir
+set autoread
 
 set nohlsearch
 set incsearch
@@ -44,8 +63,10 @@ set noexpandtab
 set colorcolumn=110
 highlight ColorColumn ctermbg=darkgray
 
-set list
-set listchars=tab:▸\ ,eol:¬
+" toggle invisible characters
+" set list
+" set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
+" set showbreak=↪
 
 set splitbelow
 set splitright
@@ -77,9 +98,10 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar'
-Plug 'mileszs/ack.vim'
+Plug 'rking/ag.vim'
 Plug 'scrooloose/syntastic'
 Plug 'jiangmiao/auto-pairs'
+" Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -114,7 +136,7 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-let g:airline_theme='base16_grayscale'
+" let g:airline_theme='base16_grayscale'
 let g:airline_skip_empty_sections = 1
 
 set statusline+=%#warningmsg#
@@ -138,6 +160,9 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+" Ag {{{2
+noremap <Leader>a :silent Ag<CR>
+
 " Leaders {{{1
 noremap <Leader>s :update<CR>
 nmap <silent> <leader><leader> :NERDTreeToggle<CR>
@@ -146,7 +171,6 @@ nnoremap <leader>r :so $MYVIMRC<CR>
 nmap <leader>t :TagbarToggle<CR>
 
 " Colorscheme {{{1
-set background=dark
 colorscheme jellybeans
 let g:jellybeans_overrides = {
 \    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },

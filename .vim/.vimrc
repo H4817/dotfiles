@@ -12,8 +12,8 @@ inoremap <C-f> <Right>
 
 "auto formatting
 " imap <c-q> <Esc> gggqGgi  
-nmap <c-q> gg=G<c-o><c-o>
-imap <c-q> <Esc> gg=G<c-o><c-o>i
+nmap <c-q> gg=G<c-o><c-o>zz
+imap <c-q> <Esc> gg=G<c-o><c-o>zzi
 
 inoremap <C-j> <Esc>O<Esc>jA
 inoremap <C-k> <Esc>ddkPA
@@ -21,12 +21,6 @@ nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>a
 
 let mapleader= "\<Space>"
-" C++ settings {{{1
-let &path.="src/include,/usr/include/AL,"
-set includeexpr=substitute(v:fname,'\\.','/','g')
-set makeprg=make\ -C\ ../build\ -j9
-nnoremap <F4> :make!<cr>
-autocmd BufNewFile *.cpp r /path/to/file.cpp
 
 " Gui settings {{{1
 if has("gui_running")
@@ -60,6 +54,8 @@ set softtabstop=4
 set shiftwidth=4
 set noexpandtab
 
+set tags=./tags,tags;$HOME
+
 set colorcolumn=110
 highlight ColorColumn ctermbg=darkgray
 
@@ -75,7 +71,7 @@ set wrap
 set linebreak
 set foldmethod=marker
 set smartindent
-set clipboard=unnamed
+set clipboard^=unnamed,unnamedplus
 
 set keymap=russian-jcukenwin
 set iminsert=0
@@ -101,6 +97,7 @@ Plug 'majutsushi/tagbar'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/syntastic'
 Plug 'jiangmiao/auto-pairs'
+Plug 'christoomey/vim-tmux-navigator'
 " Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
@@ -149,19 +146,37 @@ let g:UltiSnipsSnippetsDir="~/.config/nvim/plugged/vim-snippets/UltiSnips"
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:UltiSnipsListSnippets="<c-l>"
+" let g:ycm_key_list_accept_completion = ['<C-space>']
+" let g:UltiSnipsListSnippets="<c-l>"
 let g:ycm_show_diagnostics_ui = 0
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
+ 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
 " Ag {{{2
 noremap <Leader>a :silent Ag<CR>
+
+" Tmux navigator {{{2
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+
+" YouCompleteMe {{{2
+let g:ycm_confirm_extra_conf = 0 
+map <C-]> :YcmCompleter GoToImprecise<CR>
+" let g:ycm_key_list_select_completion=[]
+" let g:ycm_key_list_previous_completion=[]
+let g:ycm_global_ycm_extra_conf = "~/dotfiles/dotfiles/.vim/.ycm_extra_conf.py"
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " Leaders {{{1
 noremap <Leader>s :update<CR>

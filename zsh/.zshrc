@@ -52,10 +52,33 @@ alias poff='sudo systemctl poweroff'
 
 alias caps='xmodmap ~/.Xmodmap'
 
-# alias csc='touch main.cpp CMakeLists.txt'
-alias csc='echo "int main() {
+alias csc='echo "#include <iostream>
+int main() {
+	std::cout << \"hello motherfucker\" << std::endl;
 	return 0;
-}" > main.cpp'
+}" > main.cpp && echo "
+cmake_minimum_required(VERSION 3.5)
+get_filename_component(ProjectId \${CMAKE_CURRENT_SOURCE_DIR} NAME)
+string(REPLACE \" \" \"_\" ProjectId \${ProjectId})
+project(\${ProjectId})
+
+file(GLOB \${PROJECT_NAME}_SRC
+    \"*.h\"
+    \"*.cpp\"
+)
+
+add_executable(\${PROJECT_NAME} \${\${PROJECT_NAME}_SRC})
+
+" > CMakeLists.txt'
+
+
+alias crf='echo "#!/bin/bash
+cmake .
+make
+./\"\${PWD##*/}\"
+" > run.sh && chmod u+x run.sh'
+
+alias blank_cpp_project='csc && crf && ./run.sh && git init'
 
 source $ZSH/oh-my-zsh.sh
 

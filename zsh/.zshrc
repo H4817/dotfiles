@@ -79,7 +79,7 @@ make
 " > run.sh && chmod u+x run.sh'
 
 alias blank_cpp_project='csc && crf && ./run.sh && git init'
-
+alias np='cd ~/Dropbox/Projects/ && mkdir $(date +%F) && cd $_'
 source $ZSH/oh-my-zsh.sh
 
 

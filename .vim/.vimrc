@@ -10,6 +10,10 @@ inoremap <C-d> <Delete>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
+
 "auto formatting
 " imap <c-q> <Esc> gggqGgi  
 nmap <c-q> gg=G<c-o><c-o>zz
@@ -56,6 +60,7 @@ set noexpandtab
 
 set tags=./tags,tags;$HOME
 
+autocmd Filetype gitcommit setlocal spell textwidth=72
 set colorcolumn=110
 highlight ColorColumn ctermbg=darkgray
 

@@ -24,6 +24,12 @@ inoremap <C-k> <Esc>ddkPA
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>a
 
+" move visual block
+vmap <c-l> olol
+vmap <c-h> ohoh
+vmap <c-j> ojoj
+vmap <c-k> okok
+
 let mapleader= "\<Space>"
 
 " Gui settings {{{1
@@ -57,6 +63,8 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set noexpandtab
+
+set inccommand=split
 
 set tags=./tags,tags;$HOME
 

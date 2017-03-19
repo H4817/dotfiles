@@ -125,3 +125,5 @@ zle -N zle-keymap-select
 
 export KEYTIMEOUT=1
 zstyle ':completion:*' menu select
+export EDITOR=/usr/bin/nvim
+export VISUAL=/usr/bin/nvim

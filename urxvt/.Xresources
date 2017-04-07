@@ -35,7 +35,8 @@ URxvt.scrollBar: false
 
 ! U.font:xft:Meslo LG M DZ for Powerline:bold:pixelsize=15:antialias=true:hinting=true
 
-urxvt*font:xft:Meslo LG M DZ for Powerline:bold:pixelsize=15
+!urxvt*font:xft:Meslo LG M DZ for Powerline:bold:pixelsize=15
+URxvt.font: xft:DejaVu Sans Mono for Powerline:size=11
 
 ! U.font:xft:Source Code Pro for Powerline:size=15:antialias=true:hinting=true
 

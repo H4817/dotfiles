@@ -82,7 +82,7 @@ alias blank_cpp_project='csc && crf && ./run.sh && git init'
 alias np='cd ~/Dropbox/Projects/ && mkdir $(date +%F) && cd $_'
 source $ZSH/oh-my-zsh.sh
 
-
+alias weather='curl -4 http://wttr.in/'
 
 
 # You may need to manually set your language environment
@@ -127,3 +127,5 @@ export KEYTIMEOUT=1
 zstyle ':completion:*' menu select
 export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

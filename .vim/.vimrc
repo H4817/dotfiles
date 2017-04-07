@@ -24,6 +24,8 @@ inoremap <C-k> <Esc>ddkPA
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>a
 
+command! -bang -nargs=* Agu call fzf#vim#ag(<q-args>, '--skip-vcs-ignores', {'down': '~40%'})
+
 " move visual block
 vmap <c-l> olol
 vmap <c-h> ohoh
@@ -64,7 +66,9 @@ set softtabstop=4
 set shiftwidth=4
 set noexpandtab
 
-set inccommand=split
+if has('nvim')
+	set inccommand=split
+endif
 
 set tags=./tags,tags;$HOME
 
@@ -92,10 +96,11 @@ set imsearch=0
 highlight lCursor guifg=NONE guibg=Cyan
 
 " Plugins {{{1
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'scrooloose/nerdtree'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
@@ -103,7 +108,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'flazz/vim-colorschemes'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar'
@@ -162,7 +167,6 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 " let g:ycm_key_list_accept_completion = ['<C-space>']
 " let g:UltiSnipsListSnippets="<c-l>"
 let g:ycm_show_diagnostics_ui = 0
-
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
@@ -172,8 +176,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 
 " Ag {{{2
-noremap <Leader>a :silent Ag<CR>
-
+noremap <Leader>a yiw :Agu <C-r>"<CR>
 " Tmux navigator {{{2
 let g:tmux_navigator_no_mappings = 1
 
@@ -190,6 +193,12 @@ map <C-]> :YcmCompleter GoToImprecise<CR>
 let g:ycm_global_ycm_extra_conf = "~/dotfiles/dotfiles/.vim/.ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+
+" fzf {{{2
+nnoremap <C-p> :Files<CR>
+nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>l :Lines<CR>
+nnoremap <Leader>/ :BLines<CR>
 
 " Leaders {{{1
 noremap <Leader>s :update<CR>

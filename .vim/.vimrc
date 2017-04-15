@@ -32,10 +32,19 @@ vmap <c-h> ohoh
 vmap <c-j> ojoj
 vmap <c-k> okok
 
+vnoremap // y/<C-R>"<CR>
+
 let mapleader= "\<Space>"
 
-" Gui settings {{{1
+"Gui settings {{{1
 if has("gui_running")
+	if has("gui_gtk2")
+		set guifont=CodeNewRoman\ NF\ 14
+	elseif has("gui_macvim")
+		set guifont=Menlo\ Regular:h14
+	elseif has("gui_win32")
+		set guifont=Consolas:h11:cANSI
+	endif
 	set guioptions-=T
 	set guioptions-=r
 	set guioptions-=R
@@ -65,6 +74,12 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set noexpandtab
+
+" jump to the last position when reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
 
 if has('nvim')
 	set inccommand=split
@@ -116,7 +131,15 @@ Plug 'rking/ag.vim'
 Plug 'scrooloose/syntastic'
 Plug 'jiangmiao/auto-pairs'
 Plug 'christoomey/vim-tmux-navigator'
-" Plug 'ryanoasis/vim-devicons'
+Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'ryanoasis/vim-devicons'
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+Plug 'dag/vim2hs', { 'for': 'haskell' }
+
+"Plug 'Chiel92/vim-autoformat'
+"Plug 'Yggdroot/indentLine'
+"Plug 'w0rp/ale'
+
 
 call plug#end()
 
@@ -153,6 +176,7 @@ endif
 
 " let g:airline_theme='base16_grayscale'
 let g:airline_skip_empty_sections = 1
+let g:airline#extensions#whitespace#enabled = 0
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -199,7 +223,8 @@ nnoremap <C-p> :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>l :Lines<CR>
 nnoremap <Leader>/ :BLines<CR>
-
+nnoremap <Leader>c :Commits<CR>
+nnoremap <M-c> :Commands<CR>
 " Leaders {{{1
 noremap <Leader>s :update<CR>
 nmap <silent> <leader><leader> :NERDTreeToggle<CR>

@@ -28,6 +28,8 @@ alias sus='sudo pm-suspend'
 
 alias S='sudo pacman -Syu'
 
+alias R='sudo pacman -R'
+
 alias y='yaourt'
 
 alias yu='yaourt -Syu --aur'
@@ -129,3 +131,4 @@ export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /home/nikolaj/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

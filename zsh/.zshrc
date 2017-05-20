@@ -52,7 +52,7 @@ alias remove='yaourt -Rs'
 
 alias poff='sudo systemctl poweroff'
 
-alias caps='xmodmap ~/.Xmodmap'
+alias caps='setxkbmap -layout us -option ctrl:nocaps && setxkbmap -layout us,ru -variant -option grp:alt_shift_toggle,terminate:ctrl_alt_bksp &'
 
 alias csc='echo "#include <iostream>
 int main() {
@@ -86,6 +86,21 @@ source $ZSH/oh-my-zsh.sh
 
 alias weather='curl -4 http://wttr.in/'
 
+alias mvv='setopt +o nomatch && mv *.flv *.mkv ~/videos'
+
+alias go='git fetch --all && git reset --hard origin/`git rev-parse --abbrev-ref HEAD`'
+
+alias gp='git push origin `git rev-parse --abbrev-ref HEAD`'
+
+alias ga='git add .'
+
+alias gr='git reset'
+
+alias gs='git status'
+
+alias gc='git commit -v'
+
+alias gf='ga && gc && gp'
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -106,7 +121,7 @@ alias weather='curl -4 http://wttr.in/'
 COMPLETION_WAITING_DOTS="false"
 zstyle ':completion:*' menu select
 
-# bindkey -v
+#bindkey -v
 
 bindkey '^P' up-history
 bindkey '^N' down-history
@@ -132,3 +147,5 @@ export VISUAL=/usr/bin/nvim
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /home/nikolaj/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+eval $(thefuck --alias)

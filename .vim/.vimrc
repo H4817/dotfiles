@@ -10,6 +10,38 @@ inoremap <C-d> <Delete>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 
+ino jj <esc>
+cno jj <c-c>
+
+set lazyredraw
+
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
+
+
+" disable ex mode
+noremap <S-q> <NOP> 
+
+inoremap  <Up>     <NOP>
+inoremap  <Down>   <NOP>
+inoremap  <Left>   <NOP>
+inoremap  <Right>  <NOP>
+noremap   <Up>     <NOP>
+noremap   <Down>   <NOP>
+noremap   <Left>   <NOP>
+noremap   <Right>  <NOP>
+
+" allows incsearch highlighting for range commands
+cnoremap $t <CR>:t''<CR>
+cnoremap $T <CR>:T''<CR>
+cnoremap $m <CR>:m''<CR>
+cnoremap $M <CR>:M''<CR>
+cnoremap $d <CR>:d<CR>``
+
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 
@@ -96,6 +128,9 @@ highlight ColorColumn ctermbg=darkgray
 " set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
 " set showbreak=↪
 
+" Display extra whitespace
+"set list listchars=tab:»·,trail:·,nbsp:·
+
 set splitbelow
 set splitright
 
@@ -114,6 +149,7 @@ highlight lCursor guifg=NONE guibg=Cyan
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdcommenter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
@@ -123,7 +159,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'flazz/vim-colorschemes'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Rip-Rip/clang_complete'
+"Plug 'zchee/deoplete-jedi'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar'
@@ -135,19 +174,24 @@ Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'ryanoasis/vim-devicons'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'dag/vim2hs', { 'for': 'haskell' }
+" Plug 'easymotion/vim-easymotion'
 
 "Plug 'Chiel92/vim-autoformat'
-"Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 "Plug 'w0rp/ale'
 
 
 call plug#end()
-
+"let g:deoplete#enable_at_startup = 1
 " Syntastic {{{2
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_aggregate_errors = 1
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " Fugitive {{{2
@@ -178,9 +222,6 @@ endif
 let g:airline_skip_empty_sections = 1
 let g:airline#extensions#whitespace#enabled = 0
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 " Ultisnips {{{2
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.

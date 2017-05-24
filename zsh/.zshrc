@@ -102,6 +102,12 @@ alias gc='git commit -v'
 
 alias gf='ga && gc && gp'
 
+mkd ()
+{
+    mkdir -p -- "$1" &&
+      cd -P -- "$1"
+}
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 

@@ -10,9 +10,6 @@ inoremap <C-d> <Delete>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 
-ino jj <esc>
-cno jj <c-c>
-
 set lazyredraw
 
 nnoremap n nzz
@@ -150,6 +147,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
+" Plug 'OmniSharp/omnisharp-vim', { 'do': 'git submodule update --init --recursive && cd server && xbuild' } 
+Plug 'tpope/vim-dispatch'
+" Plug 'sickill/vim-pasta'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
@@ -258,6 +258,10 @@ map <C-]> :YcmCompleter GoToImprecise<CR>
 let g:ycm_global_ycm_extra_conf = "~/dotfiles/dotfiles/.vim/.ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+
+
+" ReplaceWithRegister {{{2
+vmap p gr
 
 " fzf {{{2
 nnoremap <C-p> :Files<CR>

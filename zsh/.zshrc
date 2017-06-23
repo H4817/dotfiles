@@ -86,9 +86,9 @@ source $ZSH/oh-my-zsh.sh
 
 alias weather='curl -4 http://wttr.in/'
 
-alias mvv='setopt +o nomatch && mv *.flv *.mkv ~/videos'
+alias mvv='setopt +o nomatch && mv *.flv *.mkv *.webm *.mp4 ~/videos'
 
-alias go='git fetch --all && git reset --hard origin/`git rev-parse --abbrev-ref HEAD`'
+alias git_override='git fetch --all && git reset --hard origin/`git rev-parse --abbrev-ref HEAD`'
 
 alias gp='git push origin `git rev-parse --abbrev-ref HEAD`'
 
@@ -155,3 +155,5 @@ export VISUAL=/usr/bin/nvim
 source /home/nikolaj/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval $(thefuck --alias)
+export ATHAME_ENABLED=0
+#unset zle_bracketed_paste

@@ -1,0 +1,31 @@
+nmap K i<CR><Esc>
+nmap <c-q> gg=G<c-o><c-o>zz
+imap <c-q> <Esc> gg=G<c-o><c-o>zzi
+
+let mapleader= "\<Space>"
+
+set number
+set relativenumber
+set cursorline
+set clipboard^=unnamed,unnamedplus
+
+inoremap <M-d> <Esc>ldwi
+inoremap <C-d> <Delete>
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
+
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
+nmap K i<CR><Esc>
+
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
+
+set nohlsearch
+set incsearch
+set ignorecase
+set smartcase

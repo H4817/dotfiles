@@ -24,7 +24,9 @@ alias startT='teamviewer --daemon start'
 
 alias stopT='teamviewer --daemon stop'
 
-alias sus='sudo pm-suspend'
+alias sus='clear && sudo pm-suspend && sleep 20 && currency && weather'
+
+alias currency='cconv 1 usd rub && cconv 1 eur rub && cconv 1 btc usd'
 
 alias S='sudo pacman -Syu'
 
@@ -106,6 +108,11 @@ mkd ()
 {
     mkdir -p -- "$1" &&
       cd -P -- "$1"
+}
+
+cconv() 
+{
+  wget -qO- "http://www.google.com/finance/converter?a=$1&from=$2&to=$3" |  sed '/res/!d;s/<[^>]*>//g';
 }
 
 # You may need to manually set your language environment

@@ -61,6 +61,19 @@ vmap <c-h> ohoh
 vmap <c-j> ojoj
 vmap <c-k> okok
 
+" --column: Show column number
+" --line-number: Show line number
+" --no-heading: Do not show file headings in results
+" --fixed-strings: Search term as a literal string
+" --ignore-case: Case insensitive search
+" --no-ignore: Do not respect .gitignore, etc...
+" --hidden: Search hidden files and folders
+" --follow: Follow symlinks
+" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+" --color: Search color options
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+set grepprg=rg\ --vimgrep
+
 vnoremap // y/<C-R>"<CR>
 
 let mapleader= "\<Space>"
@@ -166,7 +179,8 @@ Plug 'flazz/vim-colorschemes'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar'
-Plug 'rking/ag.vim'
+Plug 'editorconfig/editorconfig-vim'
+" Plug 'rking/ag.vim'
 Plug 'scrooloose/syntastic'
 Plug 'jiangmiao/auto-pairs'
 Plug 'christoomey/vim-tmux-navigator'
@@ -240,8 +254,12 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+
+" rg {{{2
+noremap <Leader>a yiw :Find <C-r>"<CR>
+
 " Ag {{{2
-noremap <Leader>a yiw :Agu <C-r>"<CR>
+" noremap <Leader>a yiw :Agu <C-r>"<CR>
 " Tmux navigator {{{2
 let g:tmux_navigator_no_mappings = 1
 

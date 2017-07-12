@@ -78,6 +78,12 @@ vnoremap // y/<C-R>"<CR>
 
 let mapleader= "\<Space>"
 
+set wildmode=longest,list,full
+set wildmenu
+
+autocmd FileType php setlocal makeprg=zca\ %<.php
+autocmd FileType php setlocal errorformat=%f(line\ %l):\ %m
+
 "Gui settings {{{1
 if has("gui_running")
 	if has("gui_gtk2")

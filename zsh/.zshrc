@@ -133,10 +133,8 @@ cconv()
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"<Paste>
 
-COMPLETION_WAITING_DOTS="false"
-zstyle ':completion:*' menu select
-
-#bindkey -v
+COMPLETION_WAITING_DOTS="true"
+# bindkey -v
 
 bindkey '^P' up-history
 bindkey '^N' down-history
@@ -169,8 +167,8 @@ export VISUAL=/usr/bin/nvim
 # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
-source /home/nikolaj/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+# source /home/nikolaj/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_AUTOSUGGEST_USE_ASYNC=true
 eval $(thefuck --alias)
-export ATHAME_ENABLED=0
-#unset zle_bracketed_paste
+export ATHAME_ENABLED=1
+unset zle_bracketed_paste

@@ -15,16 +15,15 @@ plugins=(zsh-autosuggestions)
 
 # User configuration
 
-
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
-# export MANPATH="/usr/local/man:$MANPATH"
+
 alias s='sudo pacman -S'
 
 alias startT='teamviewer --daemon start'
 
 alias stopT='teamviewer --daemon stop'
 
-alias sus='clear && sudo pm-suspend && sleep 20 && currency && weather'
+alias sus='sudo pm-suspend && clear && sleep 20 && currency && weather'
 
 alias currency='cconv 1 usd rub && cconv 1 eur rub && cconv 1 btc usd'
 
@@ -117,24 +116,7 @@ cconv()
   wget -qO- "http://www.google.com/finance/converter?a=$1&from=$2&to=$3" |  sed '/res/!d;s/<[^>]*>//g';
 }
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"<Paste>
-
 COMPLETION_WAITING_DOTS="true"
-# bindkey -v
 
 bindkey '^P' up-history
 bindkey '^N' down-history
@@ -170,5 +152,5 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 # source /home/nikolaj/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 eval $(thefuck --alias)
-export ATHAME_ENABLED=1
-unset zle_bracketed_paste
+export ATHAME_ENABLED=0
+#unset zle_bracketed_paste

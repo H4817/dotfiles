@@ -139,14 +139,6 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 set colorcolumn=110
 highlight ColorColumn ctermbg=darkgray
 
-" toggle invisible characters
-" set list
-" set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
-" set showbreak=↪
-
-" Display extra whitespace
-"set list listchars=tab:»·,trail:·,nbsp:·
-
 set splitbelow
 set splitright
 
@@ -166,7 +158,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
-" Plug 'OmniSharp/omnisharp-vim', { 'do': 'git submodule update --init --recursive && cd server && xbuild' } 
 Plug 'tpope/vim-dispatch'
 " Plug 'sickill/vim-pasta'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -180,8 +171,6 @@ Plug 'tpope/vim-repeat'
 Plug 'flazz/vim-colorschemes'
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'Rip-Rip/clang_complete'
-"Plug 'zchee/deoplete-jedi'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar'
@@ -202,7 +191,6 @@ Plug 'dag/vim2hs', { 'for': 'haskell' }
 
 
 call plug#end()
-"let g:deoplete#enable_at_startup = 1
 " Syntastic {{{2
 
 set statusline+=%#warningmsg#
@@ -246,12 +234,7 @@ let g:airline#extensions#whitespace#enabled = 0
 " Ultisnips {{{2
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsSnippetsDir="~/.config/nvim/plugged/vim-snippets/UltiSnips"
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-" let g:ycm_key_list_accept_completion = ['<C-space>']
 " let g:UltiSnipsListSnippets="<c-l>"
-let g:ycm_show_diagnostics_ui = 0
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
@@ -275,6 +258,11 @@ nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 
 " YouCompleteMe {{{2
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+" let g:ycm_key_list_accept_completion = ['<C-space>']
 let g:ycm_confirm_extra_conf = 0 
 map <C-]> :YcmCompleter GoToImprecise<CR>
 " let g:ycm_key_list_select_completion=[]

@@ -29,3 +29,4 @@ set nohlsearch
 set incsearch
 set ignorecase
 set smartcase
+set surround

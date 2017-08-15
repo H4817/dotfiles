@@ -149,7 +149,6 @@ export VISUAL=/usr/bin/nvim
 # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
-# source /home/nikolaj/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 eval $(thefuck --alias)
 export ATHAME_ENABLED=0

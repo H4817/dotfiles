@@ -181,7 +181,6 @@ Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'dag/vim2hs', { 'for': 'haskell' }
 Plug 'w0rp/ale'
 Plug 'elixir-editors/vim-elixir'
-Plug 'jlanzarotta/bufexplorer'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -251,12 +250,6 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-" bufexplorer {{{2
-nnoremap <leader>b :BufExplorer<CR>
-let g:bufExplorerDisableDefaultKeyMapping=1
-let g:bufExplorerShowRelativePath=1
-
-
 " rg {{{2
 noremap <Leader>a yiw :Find <C-r>"<CR>
 
@@ -290,7 +283,7 @@ vmap p gr
 
 " fzf {{{2
 nnoremap <C-p> :Files<CR>
-nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>j :Buffers<CR>
 nnoremap <Leader>l :Lines<CR>
 nnoremap <Leader>/ :BLines<CR>
 nnoremap <Leader>c :Commits<CR>

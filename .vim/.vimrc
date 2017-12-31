@@ -159,7 +159,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-dispatch'
-" Plug 'sickill/vim-pasta'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
@@ -169,25 +168,34 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'flazz/vim-colorschemes'
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar'
 Plug 'editorconfig/editorconfig-vim'
-" Plug 'rking/ag.vim'
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 Plug 'jiangmiao/auto-pairs'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'ryanoasis/vim-devicons'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'dag/vim2hs', { 'for': 'haskell' }
-" Plug 'easymotion/vim-easymotion'
+Plug 'w0rp/ale'
+Plug 'elixir-editors/vim-elixir'
+Plug 'jlanzarotta/bufexplorer'
 
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+" Plug 'rking/ag.vim'
+" Plug 'sickill/vim-pasta'
 "Plug 'Chiel92/vim-autoformat'
 " Plug 'Yggdroot/indentLine'
-"Plug 'w0rp/ale'
 
 
 call plug#end()
@@ -242,6 +250,11 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
  
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+" bufexplorer {{{2
+nnoremap <leader>b :BufExplorer<CR>
+let g:bufExplorerDisableDefaultKeyMapping=1
+let g:bufExplorerShowRelativePath=1
 
 
 " rg {{{2

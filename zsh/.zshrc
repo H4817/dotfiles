@@ -103,8 +103,6 @@ alias gc='git commit -v'
 
 alias gf='ga && gc && gp'
 
-alias sudo='sudo '
-
 mkd ()
 {
     mkdir -p -- "$1" &&

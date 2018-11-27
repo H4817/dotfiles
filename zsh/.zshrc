@@ -10,8 +10,7 @@ ZSH_THEME="agnoster1"
 
 ENABLE_CORRECTION="true"
 
-plugins=(git)
-plugins=(zsh-autosuggestions)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting  git)
 
 # User configuration
 

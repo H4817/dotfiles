@@ -16,6 +16,22 @@ plugins=(zsh-autosuggestions zsh-syntax-highlighting  git)
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 
+alias gd='git diff'
+
+alias gai='git add --interactive'
+
+alias gad='git add'
+
+alias gcb='git checkout -b'
+
+alias gcm='git checkout master'
+
+alias gpu='git pull origin `git rev-parse --abbrev-ref HEAD`'
+
+alias gb='git branch'
+
+alias gl='git lg'
+
 alias s='sudo pacman -S'
 
 alias startT='teamviewer --daemon start'

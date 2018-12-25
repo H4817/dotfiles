@@ -61,6 +61,12 @@ vmap <c-h> ohoh
 vmap <c-j> ojoj
 vmap <c-k> okok
 
+xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
+function! ExecuteMacroOverVisualRange()
+  echo "@".getcmdline()
+  execute ":'<,'>normal @".nr2char(getchar())
+endfunction
+
 " --column: Show column number
 " --line-number: Show line number
 " --no-heading: Do not show file headings in results

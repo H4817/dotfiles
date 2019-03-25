@@ -1,3 +1,4 @@
+export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -14,13 +15,17 @@ plugins=(zsh-autosuggestions zsh-syntax-highlighting  git)
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+#export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 
 alias gd='git diff'
+
+alias gnb='gcm && gpu && gcb'
 
 alias gai='git add --interactive'
 
 alias gad='git add'
+
+alias gpr='git pull --rebase'
 
 alias gcb='git checkout -b'
 
